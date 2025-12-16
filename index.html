@@ -5,13 +5,14 @@
 <title>Cape Plaster & Pools | Built finishes. Ongoing care.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+
 <style>
 :root{--navy:#00112D;--blue:#024E97;--accent:#11B6F0}
 *{box-sizing:border-box}
 body{margin:0;font-family:Montserrat,sans-serif;color:var(--navy)}
 .site-header{background:linear-gradient(90deg,var(--navy),var(--blue));position:sticky;top:0;z-index:1000}
 .header-inner{max-width:1280px;margin:auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
-.logo svg{height:46px}
+.logo img{height:46px}
 .main-nav ul{list-style:none;display:flex;gap:24px;margin:0;padding:0}
 .main-nav a{color:#fff;text-decoration:none;font-weight:600;font-size:17px}
 .has-dropdown{position:relative}
@@ -19,6 +20,7 @@ body{margin:0;font-family:Montserrat,sans-serif;color:var(--navy)}
 .has-dropdown:hover .dropdown{display:block}
 .dropdown a{display:block;padding:8px 20px;font-size:15px}
 .whatsapp-btn{background:linear-gradient(90deg,var(--blue),var(--accent));color:var(--navy);padding:10px 16px;border-radius:6px;font-weight:700;text-decoration:none}
+
 .hero{position:relative;min-height:100vh;background:url('assets/hero.webp') center/cover no-repeat;display:flex;align-items:center}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,17,45,.7),rgba(0,17,45,.25))}
 .hero-content{position:relative;max-width:720px;padding:80px;color:#fff}
@@ -26,6 +28,7 @@ body{margin:0;font-family:Montserrat,sans-serif;color:var(--navy)}
 .hero p{font-size:20px;margin:0 0 32px}
 .btn-primary{background:var(--accent);color:var(--navy);padding:14px 22px;border-radius:6px;font-weight:700;text-decoration:none;margin-right:16px}
 .btn-secondary{border:2px solid #fff;color:#fff;padding:12px 20px;border-radius:6px;text-decoration:none}
+
 .site-footer{background:var(--navy);color:#fff;padding:60px 24px}
 .footer-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
 .footer-grid h4{font-size:18px;color:#9FF6FF}
@@ -36,16 +39,16 @@ body{margin:0;font-family:Montserrat,sans-serif;color:var(--navy)}
 
 <header class="site-header">
   <div class="header-inner">
+
     <div class="logo">
-      <!-- INLINE SVG LOGO -->
-      <!-- Your SVG is already uploaded; GitHub will render it inline here -->
-      <!-- DO NOT EDIT -->
+      <img src="assets/logo.svg" alt="Cape Plaster & Pools">
     </div>
 
     <nav class="main-nav">
       <ul>
         <li><a href="/">Home</a></li>
-        <li class="has-dropdown"><a href="#">Services</a>
+        <li class="has-dropdown">
+          <a href="#">Services</a>
           <ul class="dropdown">
             <li><a href="#">Fix & Supply</a></li>
             <li><a href="#">Home Maintenance</a></li>
@@ -55,7 +58,8 @@ body{margin:0;font-family:Montserrat,sans-serif;color:var(--navy)}
             <li><a href="#">Stonework & Paving</a></li>
           </ul>
         </li>
-        <li class="has-dropdown"><a href="#">Areas</a>
+        <li class="has-dropdown">
+          <a href="#">Areas</a>
           <ul class="dropdown">
             <li><a href="#">Southern Suburbs</a></li>
             <li><a href="#">Deep South</a></li>
@@ -70,6 +74,7 @@ body{margin:0;font-family:Montserrat,sans-serif;color:var(--navy)}
     </nav>
 
     <a class="whatsapp-btn" href="https://wa.me/27766125035">WhatsApp</a>
+
   </div>
 </header>
 
@@ -85,10 +90,23 @@ body{margin:0;font-family:Montserrat,sans-serif;color:var(--navy)}
 
 <footer class="site-footer">
   <div class="footer-grid">
-    <div><strong>Cape Plaster & Pools</strong><p>Empowering skilled crews.<br>Elevating Cape Town homes.</p></div>
-    <div><h4>Southern Suburbs</h4>Constantia<br>Claremont<br>Newlands<br>Rondebosch</div>
-    <div><h4>Deep South</h4>Kommetjie<br>Noordhoek<br>Scarborough<br>Fish Hoek</div>
-    <div><h4>Atlantic Seaboard</h4>Camps Bay<br>Clifton<br>Llandudno<br>Hout Bay<br><br>quote@capeplasterandpools.co.za</div>
+    <div>
+      <strong>Cape Plaster & Pools</strong>
+      <p>Empowering skilled crews.<br>Elevating Cape Town homes.</p>
+    </div>
+    <div>
+      <h4>Southern Suburbs</h4>
+      Constantia<br>Claremont<br>Newlands<br>Rondebosch
+    </div>
+    <div>
+      <h4>Deep South</h4>
+      Kommetjie<br>Noordhoek<br>Scarborough<br>Fish Hoek
+    </div>
+    <div>
+      <h4>Atlantic Seaboard</h4>
+      Camps Bay<br>Clifton<br>Llandudno<br>Hout Bay<br><br>
+      quote@capeplasterandpools.co.za
+    </div>
   </div>
 </footer>
 
