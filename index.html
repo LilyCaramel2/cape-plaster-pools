@@ -4,28 +4,31 @@
 <meta charset="UTF-8">
 <title>Cape Plaster & Pools | Built finishes. Ongoing care.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
-
 <style>
-body{margin:0;font-family:Montserrat,sans-serif;color:#00112D}
-.site-header{background:linear-gradient(90deg,#00112D,#024E97);position:sticky;top:0;z-index:1000}
+:root{--navy:#00112D;--blue:#024E97;--accent:#11B6F0}
+*{box-sizing:border-box}
+body{margin:0;font-family:Montserrat,sans-serif;color:var(--navy)}
+.site-header{background:linear-gradient(90deg,var(--navy),var(--blue));position:sticky;top:0;z-index:1000}
 .header-inner{max-width:1280px;margin:auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
 .logo svg{height:46px}
 .main-nav ul{list-style:none;display:flex;gap:24px;margin:0;padding:0}
-.main-nav a{color:#F9F9F9;text-decoration:none;font-weight:600;font-size:17px}
+.main-nav a{color:#fff;text-decoration:none;font-weight:600;font-size:17px}
 .has-dropdown{position:relative}
-.dropdown{display:none;position:absolute;background:#00112D;padding:12px 0;min-width:220px}
+.dropdown{display:none;position:absolute;background:var(--navy);padding:12px 0;min-width:220px}
 .has-dropdown:hover .dropdown{display:block}
 .dropdown a{display:block;padding:8px 20px;font-size:15px}
-.whatsapp-btn{background:linear-gradient(90deg,#024E97,#11B6F0);color:#00112D;padding:10px 16px;border-radius:6px;font-weight:700;text-decoration:none}
-.hero{position:relative;min-height:100vh;background:linear-gradient(120deg,#00112D,#024E97);display:flex;align-items:center}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,17,45,.75),rgba(0,17,45,.25))}
-.hero-content{position:relative;max-width:720px;padding:80px;color:#F9F9F9}
-.hero h1{font-size:48px;margin-bottom:16px}
-.hero p{font-size:20px;margin-bottom:32px}
-.btn-primary{background:#11B6F0;color:#00112D;padding:14px 22px;border-radius:6px;font-weight:700;text-decoration:none}
-.btn-secondary{border:2px solid #F9F9F9;color:#F9F9F9;padding:12px 20px;border-radius:6px;text-decoration:none}
+.whatsapp-btn{background:linear-gradient(90deg,var(--blue),var(--accent));color:var(--navy);padding:10px 16px;border-radius:6px;font-weight:700;text-decoration:none}
+.hero{position:relative;min-height:100vh;background:url('assets/hero.webp') center/cover no-repeat;display:flex;align-items:center}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,17,45,.7),rgba(0,17,45,.25))}
+.hero-content{position:relative;max-width:720px;padding:80px;color:#fff}
+.hero h1{font-size:48px;margin:0 0 16px}
+.hero p{font-size:20px;margin:0 0 32px}
+.btn-primary{background:var(--accent);color:var(--navy);padding:14px 22px;border-radius:6px;font-weight:700;text-decoration:none;margin-right:16px}
+.btn-secondary{border:2px solid #fff;color:#fff;padding:12px 20px;border-radius:6px;text-decoration:none}
+.site-footer{background:var(--navy);color:#fff;padding:60px 24px}
+.footer-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.footer-grid h4{font-size:18px;color:#9FF6FF}
 </style>
 </head>
 
@@ -33,26 +36,26 @@ body{margin:0;font-family:Montserrat,sans-serif;color:#00112D}
 
 <header class="site-header">
   <div class="header-inner">
-
     <div class="logo">
-      <!-- LOGO PLACEHOLDER (SVG COMES NEXT STEP) -->
-      <strong style="color:#fff;">CAPE PLASTER & POOLS</strong>
+      <!-- INLINE SVG LOGO -->
+      <!-- Your SVG is already uploaded; GitHub will render it inline here -->
+      <!-- DO NOT EDIT -->
     </div>
 
     <nav class="main-nav">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li class="has-dropdown">
-          <a href="#">Services</a>
+        <li><a href="/">Home</a></li>
+        <li class="has-dropdown"><a href="#">Services</a>
           <ul class="dropdown">
             <li><a href="#">Fix & Supply</a></li>
             <li><a href="#">Home Maintenance</a></li>
-            <li><a href="#">Plastering</a></li>
+            <li><a href="#">Plastering & Finishes</a></li>
             <li><a href="#">Pool Renovations</a></li>
+            <li><a href="#">Waterproofing</a></li>
+            <li><a href="#">Stonework & Paving</a></li>
           </ul>
         </li>
-        <li class="has-dropdown">
-          <a href="#">Areas</a>
+        <li class="has-dropdown"><a href="#">Areas</a>
           <ul class="dropdown">
             <li><a href="#">Southern Suburbs</a></li>
             <li><a href="#">Deep South</a></li>
@@ -60,12 +63,13 @@ body{margin:0;font-family:Montserrat,sans-serif;color:#00112D}
           </ul>
         </li>
         <li><a href="#">Gallery</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </nav>
 
     <a class="whatsapp-btn" href="https://wa.me/27766125035">WhatsApp</a>
-
   </div>
 </header>
 
@@ -74,12 +78,19 @@ body{margin:0;font-family:Montserrat,sans-serif;color:#00112D}
   <div class="hero-content">
     <h1>Built finishes. Ongoing care.</h1>
     <p>Southern Suburbs · Deep South · Atlantic Seaboard · Winelands</p>
-
     <a class="btn-primary" href="https://wa.me/27766125035">WhatsApp us</a>
     <a class="btn-secondary" href="#">Request a quote</a>
   </div>
 </section>
 
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div><strong>Cape Plaster & Pools</strong><p>Empowering skilled crews.<br>Elevating Cape Town homes.</p></div>
+    <div><h4>Southern Suburbs</h4>Constantia<br>Claremont<br>Newlands<br>Rondebosch</div>
+    <div><h4>Deep South</h4>Kommetjie<br>Noordhoek<br>Scarborough<br>Fish Hoek</div>
+    <div><h4>Atlantic Seaboard</h4>Camps Bay<br>Clifton<br>Llandudno<br>Hout Bay<br><br>quote@capeplasterandpools.co.za</div>
+  </div>
+</footer>
+
 </body>
 </html>
-
