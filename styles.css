@@ -26,20 +26,21 @@ html, body{
 .header-inner{
   max-width:1280px;
   margin:0 auto;
-  padding:18px 24px;
+  padding:20px 24px;
   display:flex;
   align-items:center;
   justify-content:space-between;
 }
 
-/* LOGO — INCREASED SIZE */
+/* LOGO — FINAL SCALE */
 .logo{
   display:flex;
   align-items:center;
+  flex-shrink:0;
 }
 
 .logo img{
-  height:64px;           /* was 48px */
+  height:80px;              /* BIGGER + CLEAR */
   width:auto;
   display:block;
 }
@@ -56,7 +57,7 @@ html, body{
   padding:0;
   display:flex;
   align-items:center;
-  gap:24px;
+  gap:28px;
 }
 
 .main-nav li{
@@ -106,7 +107,7 @@ html, body{
 .whatsapp-btn{
   background:linear-gradient(90deg,var(--blue),var(--accent));
   color:var(--navy);
-  padding:10px 18px;
+  padding:12px 22px;
   border-radius:6px;
   font-weight:700;
   text-decoration:none;
@@ -125,4 +126,86 @@ html, body{
 .hero-overlay{
   position:absolute;
   inset:0;
-  backgro
+  background:linear-gradient(
+    90deg,
+    rgba(0,17,45,0.75),
+    rgba(0,17,45,0.35)
+  );
+}
+
+.hero-content{
+  position:relative;
+  max-width:720px;
+  padding:80px;
+  color:#fff;
+}
+
+.hero h1{
+  font-size:48px;
+  margin:0 0 12px;
+}
+
+.hero-byline{
+  font-size:16px;
+  font-weight:500;
+  opacity:0.9;
+  margin:0 0 28px;
+}
+
+/* BUTTONS */
+.btn-primary{
+  background:var(--accent);
+  color:var(--navy);
+  padding:14px 22px;
+  border-radius:6px;
+  font-weight:700;
+  text-decoration:none;
+  margin-right:16px;
+}
+
+.btn-secondary{
+  border:2px solid #fff;
+  color:#fff;
+  padding:12px 20px;
+  border-radius:6px;
+  text-decoration:none;
+}
+
+/* ================= FOOTER ================= */
+
+.site-footer{
+  background:var(--navy);
+  color:#fff;
+  padding:60px 24px;
+}
+
+.footer-grid{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:32px;
+}
+
+.footer-logo img{
+  height:80px;              /* MATCH HEADER */
+  display:block;
+  margin-bottom:16px;
+}
+
+.footer-grid h4{
+  font-size:18px;
+  color:#9FF6FF;
+  margin-bottom:12px;
+}
+
+.footer-grid a{
+  color:#fff;
+  text-decoration:none;
+  display:block;
+  margin:4px 0;
+}
+
+.footer-grid a:hover{
+  color:var(--accent);
+}
