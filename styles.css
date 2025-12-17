@@ -14,7 +14,8 @@ html, body{
   font-family:Montserrat, sans-serif;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
+
 .site-header{
   background:linear-gradient(90deg,var(--navy),var(--blue));
   position:sticky;
@@ -25,26 +26,26 @@ html, body{
 .header-inner{
   max-width:1280px;
   margin:0 auto;
-  padding:16px 24px;
+  padding:18px 24px;
   display:flex;
   align-items:center;
   justify-content:space-between;
 }
 
-/* LOGO — FIXED */
+/* LOGO — INCREASED SIZE */
 .logo{
   display:flex;
   align-items:center;
-  min-width:160px;
 }
 
 .logo img{
-  height:48px;
+  height:64px;           /* was 48px */
   width:auto;
   display:block;
 }
 
-/* NAV */
+/* ================= NAV ================= */
+
 .main-nav{
   position:relative;
 }
@@ -70,7 +71,7 @@ html, body{
   white-space:nowrap;
 }
 
-/* DROPDOWN — FIXED */
+/* DROPDOWNS */
 .has-dropdown:hover > .dropdown{
   display:block;
 }
@@ -111,7 +112,8 @@ html, body{
   text-decoration:none;
 }
 
-/* HERO */
+/* ================= HERO ================= */
+
 .hero{
   position:relative;
   min-height:100vh;
@@ -123,82 +125,4 @@ html, body{
 .hero-overlay{
   position:absolute;
   inset:0;
-  background:linear-gradient(
-    90deg,
-    rgba(0,17,45,0.75),
-    rgba(0,17,45,0.35)
-  );
-}
-
-.hero-content{
-  position:relative;
-  max-width:720px;
-  padding:80px;
-  color:#fff;
-}
-
-.hero h1{
-  font-size:48px;
-  margin:0 0 16px;
-}
-
-.hero p{
-  font-size:20px;
-  margin:0 0 32px;
-}
-
-.btn-primary{
-  background:var(--accent);
-  color:var(--navy);
-  padding:14px 22px;
-  border-radius:6px;
-  font-weight:700;
-  text-decoration:none;
-  margin-right:16px;
-}
-
-.btn-secondary{
-  border:2px solid #fff;
-  color:#fff;
-  padding:12px 20px;
-  border-radius:6px;
-  text-decoration:none;
-}
-
-/* FOOTER */
-.site-footer{
-  background:var(--navy);
-  color:#fff;
-  padding:60px 24px;
-}
-
-.footer-grid{
-  max-width:1200px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:32px;
-}
-
-.footer-logo img{
-  height:56px;
-  display:block;
-  margin-bottom:16px;
-}
-
-.footer-grid h4{
-  font-size:18px;
-  color:#9FF6FF;
-  margin-bottom:12px;
-}
-
-.footer-grid a{
-  color:#fff;
-  text-decoration:none;
-  display:block;
-  margin:4px 0;
-}
-
-.footer-grid a:hover{
-  color:var(--accent);
-}
+  backgro
