@@ -1,72 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Cape Plaster & Pools</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <link rel="stylesheet" href="/styles.css" />
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #0a0a0a;
+  line-height: 1.6;
+  background: #ffffff;
+}
 
-  <script>
-    async function loadPartial(id, file) {
-      const el = document.getElementById(id);
-      if (!el) return;
-      try {
-        const res = await fetch(file, { cache: "no-store" });
-        if (!res.ok) throw new Error("Fetch failed");
-        el.innerHTML = await res.text();
-      } catch (e) {
-        console.error("Partial load error:", file, e);
-      }
-    }
+/* HEADER */
+.site-header {
+  background: linear-gradient(90deg, #00112d, #024e97);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-    document.addEventListener("DOMContentLoaded", () => {
-      loadPartial("site-header", "/partials/header.html");
-      loadPartial("site-footer", "/partials/footer.html");
-    });
-  </script>
-</head>
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-<body>
+.logo img {
+  height: 44px;
+  width: auto;
+}
 
-  <!-- HEADER -->
-  <div id="site-header"></div>
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 
-  <!-- MAIN CONTENT -->
-  <main>
+.main-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+}
 
-    <!-- HERO -->
-    <section class="hero">
-      <img
-        src="/assets/hero.webp"
-        alt="Luxury Cape Town home with pool"
-        class="hero-image"
-      />
+.main-nav .cta {
+  background: #11b6f0;
+  color: #00112d;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+}
 
-      <div class="hero-content">
-        <h1>Built finishes. Ongoing care.</h1>
-        <p>Southern Suburbs · Deep South · Atlantic Seaboard · Winelands</p>
-      </div>
-    </section>
+/* HERO */
+.hero {
+  position: relative;
+  height: 70vh;
+  min-height: 420px;
+  background: url("/assets/hero.webp") center / cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+}
 
-    <!-- INTRO -->
-    <section class="intro">
-      <p>Empowering skilled crews.</p>
-      <p>Elevating Cape Town homes.</p>
-    </section>
+.hero-content {
+  max-width: 1200px;
+  padding: 48px 24px;
+  color: #ffffff;
+}
 
-    <!-- SERVICES -->
-    <section class="services">
-      <h2>Services</h2>
-      <ul>
-        <li>Plastering & Skimming</li>
-        <li>Cornices & Finishes</li>
-        <li>Pool Renovations & Replastering</li>
-        <li>Tiling & Paving</li>
-        <li>Stonework & Masonry</li>
-        <li>Waterproofing & Repairs</li>
-      </ul>
-    </section>
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
 
-    <!-- AREAS -->
-    <section class="areas">
+.hero p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+/* MAIN CONTENT */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+
+section {
+  margin-bottom: 64px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+/* FOOTER */
+.site-footer {
+  background: linear-gradient(90deg, #00112d, #024e97);
+  color: #ffffff;
+  padding: 64px 24px;
+}
+
+.footer-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+}
+
+.footer-brand img {
+  height: 48px;
+  margin-bottom: 16px;
+}
+
+.site-footer h4 {
+  margin-bottom: 12px;
+}
+
+.site-footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.site-footer li {
+  margin-bottom: 6px;
+}
