@@ -1,18 +1,17 @@
-<header class="site-header">
-  <div class="header-inner">
-    <a href="/" class="logo">
-      <img src="/assets/logo.svg" alt="Cape Plaster & Pools">
-    </a>
+async function loadPartial(id, file) {
+  const el = document.getElementById(id);
+  if (!el) return;
 
-    <nav class="main-nav">
-      <a href="/">Home</a>
-      <a href="/services.html">Services</a>
-      <a href="/areas.html">Areas</a>
-      <a href="/gallery.html">Gallery</a>
-      <a href="/blog.html">Blog</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-      <a class="cta" href="https://wa.me/27766125035">WhatsApp</a>
-    </nav>
-  </div>
-</header>
+  try {
+    const res = await fetch(file, { cache: "no-store" });
+    if (!res.ok) throw new Error("Fetch failed");
+    el.innerHTML = await res.text();
+  } catch (e) {
+    console.error("Partial load error:", file, e);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadPartial("site-header", "/partials/header.html");
+  loadPartial("site-footer", "/partials/footer.html");
+});
