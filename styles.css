@@ -19,7 +19,7 @@ html, body{
   background:linear-gradient(90deg,var(--navy),var(--blue));
   position:sticky;
   top:0;
-  z-index:1000;
+  z-index:9999;
 }
 
 .header-inner{
@@ -31,12 +31,25 @@ html, body{
   justify-content:space-between;
 }
 
+/* LOGO — FIXED */
+.logo{
+  display:flex;
+  align-items:center;
+  min-width:160px;
+}
+
 .logo img{
   height:48px;
+  width:auto;
   display:block;
 }
 
-.main-nav ul{
+/* NAV */
+.main-nav{
+  position:relative;
+}
+
+.nav-list{
   list-style:none;
   margin:0;
   padding:0;
@@ -57,7 +70,11 @@ html, body{
   white-space:nowrap;
 }
 
-/* DROPDOWNS */
+/* DROPDOWN — FIXED */
+.has-dropdown:hover > .dropdown{
+  display:block;
+}
+
 .dropdown{
   display:none;
   position:absolute;
@@ -66,10 +83,11 @@ html, body{
   min-width:240px;
   background:linear-gradient(180deg,#024E97,#00112D);
   padding:10px 0;
+  border-radius:0 0 6px 6px;
 }
 
-.has-dropdown:hover .dropdown{
-  display:block;
+.dropdown li{
+  width:100%;
 }
 
 .dropdown a{
@@ -97,7 +115,7 @@ html, body{
 .hero{
   position:relative;
   min-height:100vh;
-  background:url("assets/hero.webp") center/cover no-repeat;
+  background:url("/assets/hero.webp") center/cover no-repeat;
   display:flex;
   align-items:center;
 }
