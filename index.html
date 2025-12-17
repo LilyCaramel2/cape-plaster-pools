@@ -1,46 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Cape Plaster & Pools</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 
 <body>
 
-  <!-- HEADER PLACEHOLDER (loaded via include.js) -->
-  <div id="site-header"></div>
-
-  <!-- HERO -->
-  <section class="hero" style="background-image: url('./assets/hero.webp');">
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content">
-      <h1>Built finishes. Ongoing care.</h1>
-
-      <p class="hero-byline">
-        Southern Suburbs · Deep South · Atlantic Seaboard · Winelands
-      </p>
-
-      <div class="hero-buttons">
-        <a href="https://wa.me/27766125035" class="btn-primary">
-          WhatsApp us
-        </a>
-        <a href="/contact" class="btn-outline">
-          Request a quote
-        </a>
-      </div>
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      <img src="/assets/logo-dark.svg" alt="Cape Plaster & Pools" />
     </div>
-  </section>
 
-  <!-- FOOTER PLACEHOLDER (loaded via include.js) -->
-  <div id="site-footer"></div>
+    <nav class="main-nav">
+      <a href="/">Home</a>
 
-  <!-- JS includes -->
-  <script src="./partials/include.js" defer></script>
+      <div class="nav-group">
+        <span>Services</span>
+        <div class="dropdown">
+          <a href="#">Plastering & Finishes</a>
+          <a href="#">Pool Renovations</a>
+          <a href="#">Tiling & Paving</a>
+          <a href="#">Waterproofing</a>
+          <a href="#">Stonework</a>
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <span>Areas</span>
+        <div class="dropdown">
+          <a href="#">Southern Suburbs</a>
+          <a href="#">Deep South</a>
+          <a href="#">Atlantic Seaboard</a>
+          <a href="#">Winelands</a>
+        </div>
+      </div>
+
+      <a href="#">Gallery</a>
+      <a href="#">Blog</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+
+      <a class="whatsapp" href="#">WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-overlay">
+    <h1>Built finishes. Ongoing care.</h1>
+    <p>Southern Suburbs · Deep South · Atlantic Seaboard · Winelands</p>
+  </div>
+</section>
 
 </body>
 </html>
