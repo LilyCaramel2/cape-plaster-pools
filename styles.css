@@ -1,12 +1,9 @@
-/* =========================================================
-   CAPE PLASTER & POOLS — MASTER STYLESHEET
-   FULL FILE REPLACEMENT
-   DO NOT MERGE. DO NOT PATCH.
-   ========================================================= */
+/* ================================
+   CAPE PLASTER & POOLS
+   MASTER STYLESHEET (RESET)
+   ================================ */
 
-/* -------------------------
-   RESET / BASE
--------------------------- */
+/* ---------- CSS RESET ---------- */
 *,
 *::before,
 *::after {
@@ -15,333 +12,186 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
+html,
 body {
-  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.6;
-  color: #00112D;
-  background: #F9F9F9;
+  width: 100%;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #ffffff;
+  background-color: #00112d;
 }
 
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* -------------------------
-   BRAND VARIABLES
--------------------------- */
+/* ---------- BRAND VARIABLES ---------- */
 :root {
-  --deep-navy: #00112D;
-  --brand-blue: #024E97;
-  --bright-blue: #11B6F0;
-  --light-grey: #F9F9F9;
-  --green-accent: #55CA39;
+  --dark-navy: #00112d;
+  --deep-blue: #0a245a;
+  --vivid-azure: #024e97;
+  --bright-blue: #11b6f0;
+  --light-grey: #f9f9f9;
+  --accent-green: #55ca39; /* accents only */
 }
 
-/* -------------------------
-   TYPOGRAPHY
--------------------------- */
-h1 {
-  font-size: 44px;
-  font-weight: 700;
-}
-
-h2 {
-  font-size: 30px;
-  font-weight: 600;
-}
-
-h3,
-h4 {
-  font-weight: 600;
-}
-
-/* -------------------------
-   HEADER
--------------------------- */
+/* ---------- HEADER ---------- */
 .site-header {
   position: relative;
-  z-index: 100;
+  width: 100%;
   background: linear-gradient(
-    to bottom,
-    var(--deep-navy) 0%,
-    var(--brand-blue) 60%,
-    rgba(2, 78, 151, 0) 100%
+    90deg,
+    var(--dark-navy) 0%,
+    var(--deep-blue) 50%,
+    var(--vivid-azure) 100%
   );
+  z-index: 50;
 }
 
 .header-inner {
-  max-width: 1280px;
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 22px 32px;
+  padding: 18px 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* Logo */
-.site-header .logo img {
-  height: 56px;
+/* ---------- LOGO ---------- */
+.logo img {
+  height: 52px;
   width: auto;
+  display: block;
 }
 
-/* -------------------------
-   NAVIGATION — DESKTOP
--------------------------- */
+/* ---------- NAV ---------- */
 .main-nav {
   display: flex;
   align-items: center;
-}
-
-/* Desktop nav list */
-.nav-list {
-  list-style: none;
-  display: flex;
-  align-items: center;
   gap: 28px;
+  font-size: 15px;
 }
 
-.nav-list > li {
+.main-nav a,
+.main-nav span {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+/* ---------- DROPDOWN GROUP ---------- */
+.nav-group {
   position: relative;
 }
 
-.nav-list > li > a {
-  font-size: 17px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: #F9F9F9;
+.nav-group > span {
   padding: 6px 0;
 }
 
-.nav-list > li > a:hover {
-  color: var(--bright-blue);
-}
-
-/* -------------------------
-   DROPDOWNS (DESKTOP ONLY)
--------------------------- */
-.has-dropdown > .dropdown {
+/* ---------- DROPDOWN MENU ---------- */
+.dropdown {
   position: absolute;
-  top: 120%;
+  top: 100%;
   left: 0;
   min-width: 220px;
-  list-style: none;
-  padding: 14px 0;
   background: linear-gradient(
-    to bottom,
-    var(--deep-navy),
-    var(--brand-blue)
+    180deg,
+    var(--deep-blue),
+    var(--dark-navy)
   );
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-  z-index: 200;
-}
-
-.has-dropdown:hover > .dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.dropdown li a {
-  display: block;
-  padding: 8px 22px;
-  font-size: 15px;
-  font-weight: 500;
-  color: #F9F9F9;
-  white-space: nowrap;
-}
-
-.dropdown li a:hover {
-  color: var(--bright-blue);
-}
-
-/* -------------------------
-   WHATSAPP BUTTON (HEADER)
--------------------------- */
-.whatsapp-btn {
-  margin-left: 28px;
-  padding: 10px 18px;
-  font-size: 15px;
-  font-weight: 700;
-  background: var(--bright-blue);
-  color: var(--deep-navy);
-  border-radius: 4px;
-}
-
-.whatsapp-btn:hover {
-  background: var(--green-accent);
-}
-
-/* -------------------------
-   CRITICAL FIX — HIDE MOBILE MENU ON DESKTOP
--------------------------- */
-/* Any extra UL inside .main-nav that is NOT .nav-list is mobile nav */
-.main-nav > ul:not(.nav-list) {
+  border-radius: 8px;
+  padding: 14px 0;
   display: none;
+  flex-direction: column;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
-/* -------------------------
-   HERO
--------------------------- */
-.hero {
-  position: relative;
-  min-height: 80vh;
-  background-size: cover;
-  background-position: center;
+.dropdown a {
+  padding: 10px 22px;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.dropdown a:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* ---------- SHOW DROPDOWN ---------- */
+.nav-group:hover .dropdown {
   display: flex;
-  align-items: center;
+}
+
+/* ---------- WHATSAPP CTA ---------- */
+.main-nav .whatsapp {
+  padding: 8px 16px;
+  border-radius: 6px;
+  background-color: transparent;
+  border: 1px solid var(--bright-blue);
+}
+
+.main-nav .whatsapp:hover {
+  background-color: var(--bright-blue);
+  color: #00112d;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  width: 100%;
+  height: 78vh;
+  background: url("/assets/hero.jpg") center / cover no-repeat;
+  position: relative;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to bottom,
-    rgba(0, 17, 45, 0.55),
+    180deg,
     rgba(0, 17, 45, 0.35),
-    rgba(0, 17, 45, 0.15)
+    rgba(0, 17, 45, 0.75)
   );
-}
-
-.hero-content {
-  position: relative;
-  max-width: 900px;
-  padding: 0 32px;
-  color: #FFFFFF;
-}
-
-.hero h1 {
-  color: #FFFFFF;
-  margin-bottom: 14px;
-}
-
-.hero-byline {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 20px;
-  max-width: 720px;
-  margin-bottom: 28px;
-}
-
-.hero-buttons {
   display: flex;
-  gap: 16px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 8%;
 }
 
-.btn-primary {
-  padding: 14px 22px;
-  font-size: 15px;
+/* ---------- HERO TEXT ---------- */
+.hero h1 {
+  font-size: 48px;
   font-weight: 700;
-  background: var(--bright-blue);
-  color: var(--deep-navy);
-  border-radius: 4px;
+  max-width: 720px;
+  line-height: 1.15;
+  color: #ffffff;
 }
 
-.btn-primary:hover {
-  background: var(--green-accent);
+.hero p {
+  margin-top: 14px;
+  font-size: 16px;
+  color: var(--light-grey);
+  letter-spacing: 0.5px;
 }
 
-.btn-outline {
-  padding: 14px 22px;
-  font-size: 15px;
-  font-weight: 700;
-  border: 2px solid rgba(255, 255, 255, 0.6);
-  color: #FFFFFF;
-  border-radius: 4px;
-}
-
-.btn-outline:hover {
-  border-color: var(--bright-blue);
-  color: var(--bright-blue);
-}
-
-/* -------------------------
-   FOOTER
--------------------------- */
-.site-footer {
+/* ---------- FOOTER ---------- */
+footer {
   background: linear-gradient(
-    to bottom,
-    var(--brand-blue),
-    var(--deep-navy)
+    90deg,
+    var(--dark-navy),
+    var(--deep-blue)
   );
-  color: #F9F9F9;
-  padding: 70px 32px 40px;
+  padding: 60px 8%;
 }
 
-.footer-grid {
-  max-width: 1280px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr;
-  gap: 40px;
-}
-
-.footer-brand img {
-  height: 120px;
+footer img {
+  height: 64px;
   width: auto;
   margin-bottom: 18px;
 }
 
-.footer-brand p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #D8F3FF;
-}
-
-.site-footer h4 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: #9FF6FF;
-}
-
-.site-footer a:hover {
-  color: var(--bright-blue);
-}
-
-/* -------------------------
-   RESPONSIVE — MOBILE
--------------------------- */
-@media (max-width: 768px) {
-
-  /* Hide desktop nav */
-  .nav-list {
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .main-nav {
     display: none;
   }
 
-  /* Show mobile nav */
-  .main-nav > ul:not(.nav-list) {
-    display: block;
-  }
-
-  h1 {
+  .hero h1 {
     font-size: 36px;
-  }
-
-  .hero-byline {
-    font-size: 18px;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-brand img {
-    height: 100px;
   }
 }
