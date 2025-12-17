@@ -26,30 +26,20 @@ html, body{
 .header-inner{
   max-width:1280px;
   margin:0 auto;
-  padding:20px 24px;
+  padding:22px 24px;
   display:flex;
   align-items:center;
   justify-content:space-between;
 }
 
-/* LOGO — FINAL SCALE */
-.logo{
-  display:flex;
-  align-items:center;
-  flex-shrink:0;
-}
-
-.logo img{
-  height:80px;              /* BIGGER + CLEAR */
-  width:auto;
+/* LOGO — FORCE SIZE (OVERRIDES SVG) */
+.site-header .logo img{
+  height:96px !important;   /* THIS is why it now changes */
+  width:auto !important;
   display:block;
 }
 
 /* ================= NAV ================= */
-
-.main-nav{
-  position:relative;
-}
 
 .nav-list{
   list-style:none;
@@ -85,22 +75,12 @@ html, body{
   min-width:240px;
   background:linear-gradient(180deg,#024E97,#00112D);
   padding:10px 0;
-  border-radius:0 0 6px 6px;
-}
-
-.dropdown li{
-  width:100%;
 }
 
 .dropdown a{
   display:block;
   padding:10px 20px;
   font-size:15px;
-  font-weight:500;
-}
-
-.dropdown a:hover{
-  background:rgba(255,255,255,0.08);
 }
 
 /* CTA */
@@ -128,7 +108,7 @@ html, body{
   inset:0;
   background:linear-gradient(
     90deg,
-    rgba(0,17,45,0.75),
+    rgba(0,17,45,0.78),
     rgba(0,17,45,0.35)
   );
 }
@@ -140,16 +120,21 @@ html, body{
   color:#fff;
 }
 
-.hero h1{
-  font-size:48px;
-  margin:0 0 12px;
+/* HERO TEXT — RESTORED */
+.hero-content h1{
+  font-size:52px;
+  font-weight:700;
+  line-height:1.15;
+  margin:0 0 14px;
+  color:#fff;
 }
 
 .hero-byline{
-  font-size:16px;
+  font-size:17px;
   font-weight:500;
-  opacity:0.9;
-  margin:0 0 28px;
+  opacity:0.95;
+  margin:0 0 32px;
+  color:#fff;
 }
 
 /* BUTTONS */
@@ -188,24 +173,7 @@ html, body{
 }
 
 .footer-logo img{
-  height:80px;              /* MATCH HEADER */
+  height:96px;
   display:block;
   margin-bottom:16px;
-}
-
-.footer-grid h4{
-  font-size:18px;
-  color:#9FF6FF;
-  margin-bottom:12px;
-}
-
-.footer-grid a{
-  color:#fff;
-  text-decoration:none;
-  display:block;
-  margin:4px 0;
-}
-
-.footer-grid a:hover{
-  color:var(--accent);
 }
