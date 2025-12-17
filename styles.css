@@ -32,11 +32,18 @@ html, body{
   justify-content:space-between;
 }
 
-/* LOGO — FORCE SIZE (OVERRIDES SVG) */
+/* LOGO — FINAL FIX (SVG PADDING OVERRIDE) */
+.site-header .logo{
+  display:flex;
+  align-items:center;
+}
+
 .site-header .logo img{
-  height:96px !important;   /* THIS is why it now changes */
-  width:auto !important;
+  height:88px;
+  width:auto;
   display:block;
+  transform:scale(1.45);
+  transform-origin:left center;
 }
 
 /* ================= NAV ================= */
@@ -108,7 +115,7 @@ html, body{
   inset:0;
   background:linear-gradient(
     90deg,
-    rgba(0,17,45,0.78),
+    rgba(0,17,45,0.8),
     rgba(0,17,45,0.35)
   );
 }
@@ -120,7 +127,6 @@ html, body{
   color:#fff;
 }
 
-/* HERO TEXT — RESTORED */
 .hero-content h1{
   font-size:52px;
   font-weight:700;
@@ -173,7 +179,26 @@ html, body{
 }
 
 .footer-logo img{
-  height:96px;
+  height:88px;
+  transform:scale(1.45);
+  transform-origin:left center;
   display:block;
   margin-bottom:16px;
+}
+
+.footer-grid h4{
+  font-size:18px;
+  color:#9FF6FF;
+  margin-bottom:12px;
+}
+
+.footer-grid a{
+  color:#fff;
+  text-decoration:none;
+  display:block;
+  margin:4px 0;
+}
+
+.footer-grid a:hover{
+  color:var(--accent);
 }
