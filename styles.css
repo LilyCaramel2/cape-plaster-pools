@@ -1,136 +1,376 @@
-:root{
-  --navy:#00112D;
-  --blue:#024E97;
-  --accent:#11B6F0;
+/* =========================================================
+   CAPE PLASTER & POOLS — MASTER STYLESHEET
+   Full replacement
+   Brand-locked
+   Cloudflare-safe
+   ========================================================= */
+
+/* -------------------------
+   CSS RESET / BASE
+-------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-*{ box-sizing:border-box; }
-
-html, body{
-  margin:0;
-  padding:0;
-  font-family:Montserrat, sans-serif;
+html {
+  scroll-behavior: smooth;
 }
 
-/* ================= HEADER ================= */
-
-.site-header{
-  background:linear-gradient(90deg,var(--navy),var(--blue));
-  position:sticky;
-  top:0;
-  z-index:9999;
+body {
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #00112D;
+  background-color: #F9F9F9;
 }
 
-.header-inner{
-  max-width:1280px;
-  margin:0 auto;
-  padding:22px 24px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+/* Kill global image inheritance bugs */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
-.site-header .logo img{
-  height:88px;
-  width:auto;
-  display:block;
-  transform:scale(1.45);
-  transform-origin:left center;
+/* -------------------------
+   BRAND VARIABLES
+-------------------------- */
+
+:root {
+  --deep-navy: #00112D;
+  --brand-blue: #024E97;
+  --bright-blue: #11B6F0;
+  --light-grey: #F9F9F9;
+  --green-accent: #55CA39;
 }
 
-/* ================= NAV ================= */
+/* -------------------------
+   TYPOGRAPHY
+-------------------------- */
 
-.nav-list{
-  list-style:none;
-  margin:0;
-  padding:0;
-  display:flex;
-  align-items:center;
-  gap:28px;
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.01em;
 }
 
-.main-nav a{
-  color:#fff;
-  text-decoration:none;
-  font-weight:600;
-  font-size:17px;
+h1 {
+  font-size: 44px;
+  font-weight: 700;
 }
 
-/* ================= HERO ================= */
-
-.hero{
-  position:relative;
-  min-height:100vh;
-  background:url("/assets/hero.webp") center/cover no-repeat;
-  display:flex;
-  align-items:center;
+h2 {
+  font-size: 30px;
+  font-weight: 600;
 }
 
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    90deg,
-    rgba(0,17,45,0.8),
-    rgba(0,17,45,0.35)
+h3 {
+  font-size: 21px;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--bright-blue);
+}
+
+/* -------------------------
+   HEADER
+-------------------------- */
+
+.site-header {
+  position: relative;
+  width: 100%;
+  z-index: 100;
+  background: linear-gradient(
+    to bottom,
+    var(--deep-navy) 0%,
+    var(--brand-blue) 60%,
+    rgba(2, 78, 151, 0) 100%
   );
 }
 
-.hero-content{
-  position:relative;
-  max-width:720px;
-  padding:80px;
-  color:#fff;
+.header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 22px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.hero-content h1{
-  font-size:52px;
-  font-weight:700;
-  margin:0 0 14px;
+/* Header logo — LOCKED */
+.header-logo img {
+  width: auto;
+  height: 56px;
 }
 
-.hero-byline{
-  font-size:17px;
-  opacity:0.95;
-  margin:0 0 32px;
+/* -------------------------
+   NAVIGATION
+-------------------------- */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
 }
 
-/* ================= FOOTER ================= */
-
-.site-footer{
-  background:#00112D;
-  color:#fff;
-  padding:70px 24px;
+.main-nav > ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
 }
 
-.footer-grid{
-  max-width:1280px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:1.4fr repeat(4, 1fr);
-  gap:48px;
+.main-nav > ul > li {
+  position: relative;
 }
 
-.footer-brand img{
-  height:56px;          /* CORRECT FOOTER SIZE */
-  width:auto;
-  display:block;
-  margin-bottom:16px;
+.main-nav > ul > li > a {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #F9F9F9;
+  padding: 6px 0;
 }
 
-.footer-brand p{
-  line-height:1.6;
-  opacity:0.9;
+.main-nav > ul > li > a:hover {
+  color: var(--bright-blue);
 }
 
-.footer-grid h4{
-  font-size:18px;
-  font-weight:600;
-  color:#9FF6FF;
-  margin-bottom:14px;
+/* -------------------------
+   DROPDOWNS
+-------------------------- */
+
+.main-nav li ul {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  min-width: 220px;
+  background: linear-gradient(
+    to bottom,
+    var(--deep-navy),
+    var(--brand-blue)
+  );
+  list-style: none;
+  padding: 14px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  z-index: 200;
 }
 
-.footer-grid div{
-  font-size:15px;
-  line-height:1.8;
+.main-nav li:hover > ul {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.main-nav li ul li a {
+  display: block;
+  padding: 8px 22px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #F9F9F9;
+  white-space: nowrap;
+}
+
+.main-nav li ul li a:hover {
+  color: var(--bright-blue);
+}
+
+/* -------------------------
+   HEADER CTA (WHATSAPP)
+-------------------------- */
+
+.header-cta a {
+  padding: 10px 18px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background-color: var(--bright-blue);
+  color: var(--deep-navy);
+}
+
+.header-cta a:hover {
+  background-color: var(--green-accent);
+  color: var(--deep-navy);
+}
+
+/* -------------------------
+   HERO
+-------------------------- */
+
+.hero {
+  position: relative;
+  min-height: 80vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 17, 45, 0.55),
+    rgba(0, 17, 45, 0.35),
+    rgba(0, 17, 45, 0.15)
+  );
+}
+
+.hero-content {
+  position: relative;
+  max-width: 900px;
+  padding: 0 32px;
+  color: #FFFFFF;
+}
+
+/* Hero text LOCKED — fixes blue bug */
+.hero h1 {
+  color: #FFFFFF;
+  margin-bottom: 14px;
+}
+
+.hero p,
+.hero h2 {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 20px;
+  max-width: 720px;
+}
+
+/* -------------------------
+   FOOTER
+-------------------------- */
+
+.site-footer {
+  background: linear-gradient(
+    to bottom,
+    var(--brand-blue),
+    var(--deep-navy)
+  );
+  color: #F9F9F9;
+  padding: 70px 32px 40px;
+}
+
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+/* Footer logo — LOCKED */
+.footer-logo img {
+  height: 120px;
+  width: auto;
+  margin-bottom: 18px;
+}
+
+.footer-blurb {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #D8F3FF;
+}
+
+/* Footer headings */
+.site-footer h3 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+  color: #9FF6FF;
+}
+
+/* Footer links */
+.site-footer ul {
+  list-style: none;
+}
+
+.site-footer li {
+  margin-bottom: 6px;
+}
+
+.site-footer a {
+  font-size: 16px;
+  font-weight: 500;
+  color: #F9F9F9;
+}
+
+.site-footer a:hover {
+  color: var(--bright-blue);
+}
+
+/* Footer bottom */
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 13px;
+  color: #CDEFFF;
+}
+
+/* -------------------------
+   RESPONSIVE
+-------------------------- */
+
+@media (max-width: 1024px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-inner {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .main-nav > ul {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-logo img {
+    height: 100px;
+  }
 }
