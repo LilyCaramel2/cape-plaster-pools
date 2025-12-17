@@ -1,26 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Cape Plaster & Pools</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="/styles.css" />
+
+  <script>
+    async function loadPartial(id, file) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      try {
+        const res = await fetch(file, { cache: "no-store" });
+        if (!res.ok) throw new Error("Fetch failed");
+        el.innerHTML = await res.text();
+      } catch (e) {
+        console.error("Partial load error:", file, e);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      loadPartial("site-header", "/partials/header.html");
+      loadPartial("site-footer", "/partials/footer.html");
+    });
+  </script>
 </head>
 
 <body>
 
+  <!-- HEADER -->
   <div id="site-header"></div>
 
-  <section class="hero">
-    <img src="/assets/hero.webp" alt="Cape Town luxury home with pool">
-    <div class="hero-text">
-      <h1>Built finishes. Ongoing care.</h1>
-      <p>Southern Suburbs · Deep South · Atlantic Seaboard · Winelands</p>
-    </div>
-  </section>
+  <!-- MAIN CONTENT -->
+  <main>
 
-  <div id="site-footer"></div>
+    <!-- HERO -->
+    <section class="hero">
+      <img
+        src="/assets/hero.webp"
+        alt="Luxury Cape Town home with pool"
+        class="hero-image"
+      />
 
-  <script src="/partials/include.js"></script>
-</body>
-</html>
+      <div class="hero-content">
+        <h1>Built finishes. Ongoing care.</h1>
+        <p>Southern Suburbs · Deep South · Atlantic Seaboard · Winelands</p>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p>Empowering skilled crews.</p>
+      <p>Elevating Cape Town homes.</p>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services">
+      <h2>Services</h2>
+      <ul>
+        <li>Plastering & Skimming</li>
+        <li>Cornices & Finishes</li>
+        <li>Pool Renovations & Replastering</li>
+        <li>Tiling & Paving</li>
+        <li>Stonework & Masonry</li>
+        <li>Waterproofing & Repairs</li>
+      </ul>
+    </section>
+
+    <!-- AREAS -->
+    <section class="areas">
