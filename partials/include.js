@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   fetch("./partials/header.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("site-header").innerHTML = html;
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("site-header").innerHTML = data;
     });
 
   fetch("./partials/footer.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("site-footer").innerHTML = html;
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("site-footer").innerHTML = data;
     });
 
 });
