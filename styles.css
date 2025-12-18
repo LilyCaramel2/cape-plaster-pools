@@ -14,10 +14,9 @@
 body {
   font-family: 'Montserrat', sans-serif;
   color: var(--navy);
-  background: #ffffff;
 }
 
-/* ================= HEADER ================= */
+/* ===== HEADER ===== */
 
 .site-header {
   background: var(--navy);
@@ -36,23 +35,46 @@ body {
 }
 
 .logo img {
-  height: 44px;
+  height: 56px;
 }
 
 .main-nav {
   display: flex;
   gap: 22px;
+  align-items: center;
 }
 
-.main-nav a {
+.main-nav a,
+.main-nav span {
   color: var(--light);
-  text-decoration: none;
   font-weight: 600;
   font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.main-nav a:hover {
-  color: var(--bright);
+.nav-group {
+  position: relative;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--navy);
+  padding: 12px;
+  min-width: 220px;
+}
+
+.nav-group:hover .dropdown {
+  display: block;
+}
+
+.dropdown a {
+  display: block;
+  padding: 6px 0;
+  font-size: 14px;
 }
 
 .whatsapp-btn {
@@ -62,16 +84,13 @@ body {
   border-radius: 4px;
   font-weight: 700;
   text-decoration: none;
-  font-size: 15px;
 }
 
-/* ================= HERO ================= */
+/* ===== HERO ===== */
 
 .hero {
   position: relative;
-  height: 80vh;
-  min-height: 520px;
-  overflow: hidden;
+  height: clamp(520px, 80vh, 760px);
 }
 
 .hero-bg {
@@ -82,8 +101,7 @@ body {
   object-fit: cover;
 }
 
-.hero::after {
-  content: "";
+.hero-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 17, 45, 0.45);
@@ -93,13 +111,12 @@ body {
   position: relative;
   z-index: 2;
   max-width: 900px;
-  padding: 120px 24px 0;
-  color: #ffffff;
+  padding: clamp(80px, 15vh, 140px) 24px 0;
+  color: white;
 }
 
 .hero h1 {
-  font-size: 48px;
-  font-weight: 700;
+  font-size: clamp(32px, 5vw, 48px);
   margin-bottom: 16px;
 }
 
@@ -110,6 +127,7 @@ body {
 
 .hero-cta {
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
 }
 
@@ -126,15 +144,15 @@ body {
 }
 
 .btn.secondary {
-  border: 2px solid #ffffff;
-  color: #ffffff;
+  border: 2px solid white;
+  color: white;
 }
 
-/* ================= FOOTER ================= */
+/* ===== FOOTER ===== */
 
 .site-footer {
   background: linear-gradient(135deg, #00112D, #024E97);
-  color: #ffffff;
+  color: white;
 }
 
 .footer-inner {
@@ -142,25 +160,25 @@ body {
   margin: 0 auto;
   padding: 60px 24px;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
   gap: 32px;
 }
 
 .footer-brand img {
-  height: 52px;
+  height: 60px;
   margin-bottom: 16px;
 }
 
 .footer-brand p {
-  font-size: 16px;
-  line-height: 1.6;
   color: #D8F3FF;
+  line-height: 1.6;
 }
 
-.footer-col h3 {
+.footer-col h3,
+.footer-contact h3 {
   font-size: 18px;
-  margin-bottom: 12px;
   color: #9FF6FF;
+  margin-bottom: 12px;
 }
 
 .footer-col ul {
@@ -172,9 +190,31 @@ body {
   line-height: 1.6;
 }
 
+.footer-contact p {
+  margin-bottom: 8px;
+}
+
+.footer-whatsapp {
+  display: inline-block;
+  margin: 12px 0;
+  background: var(--bright);
+  color: var(--navy);
+  padding: 10px 14px;
+  font-weight: 700;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.footer-socials a {
+  margin-right: 12px;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.15);
-  padding: 18px 24px;
+  padding: 18px;
   text-align: center;
   font-size: 13px;
   color: #CDEFFF;
@@ -183,4 +223,26 @@ body {
 .footer-bottom a {
   color: #CDEFFF;
   text-decoration: none;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 900px) {
+  .main-nav {
+    gap: 14px;
+  }
+
+  .footer-inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    padding-top: 100px;
+  }
 }
