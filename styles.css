@@ -16,7 +16,7 @@ body {
   color: var(--navy);
 }
 
-/* ===== HEADER ===== */
+/* ================= HEADER (STABILISED) ================= */
 
 .site-header {
   background: var(--navy);
@@ -32,10 +32,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  white-space: nowrap;
 }
 
 .logo img {
-  height: 56px;
+  height: 60px;
+  display: block;
 }
 
 .main-nav {
@@ -44,37 +46,15 @@ body {
   align-items: center;
 }
 
-.main-nav a,
-.main-nav span {
+.main-nav a {
   color: var(--light);
   font-weight: 600;
   font-size: 16px;
   text-decoration: none;
-  cursor: pointer;
 }
 
-.nav-group {
-  position: relative;
-}
-
-.dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: var(--navy);
-  padding: 12px;
-  min-width: 220px;
-}
-
-.nav-group:hover .dropdown {
-  display: block;
-}
-
-.dropdown a {
-  display: block;
-  padding: 6px 0;
-  font-size: 14px;
+.main-nav a:hover {
+  color: var(--bright);
 }
 
 .whatsapp-btn {
@@ -84,9 +64,10 @@ body {
   border-radius: 4px;
   font-weight: 700;
   text-decoration: none;
+  font-size: 15px;
 }
 
-/* ===== HERO ===== */
+/* ================= HERO ================= */
 
 .hero {
   position: relative;
@@ -112,7 +93,7 @@ body {
   z-index: 2;
   max-width: 900px;
   padding: clamp(80px, 15vh, 140px) 24px 0;
-  color: white;
+  color: #ffffff;
 }
 
 .hero h1 {
@@ -144,11 +125,11 @@ body {
 }
 
 .btn.secondary {
-  border: 2px solid white;
-  color: white;
+  border: 2px solid #ffffff;
+  color: #ffffff;
 }
 
-/* ===== FOOTER ===== */
+/* ================= FOOTER ================= */
 
 .site-footer {
   background: linear-gradient(135deg, #00112D, #024E97);
@@ -225,7 +206,7 @@ body {
   text-decoration: none;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ================= RESPONSIVE ================= */
 
 @media (max-width: 900px) {
   .main-nav {
