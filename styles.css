@@ -6,118 +6,111 @@
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  color: #0b1d2d;
-  background: #ffffff;
-  line-height: 1.6;
+  color: #0b1f33;
 }
 
-/* HEADER */
 .site-header {
   background: linear-gradient(90deg, #00112d, #024e97);
 }
+
 .header-inner {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 18px 24px;
+  margin: auto;
+  padding: 14px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.brand img {
-  height: 68px;
-  width: auto;
+
+.logo img {
+  height: 44px;
 }
-.main-nav {
-  display: flex;
-  gap: 22px;
-}
+
 .main-nav a {
-  color: #ffffff;
+  margin-left: 20px;
+  color: #fff;
   text-decoration: none;
   font-weight: 500;
 }
-.cta-whatsapp {
+
+.main-nav .cta {
+  padding: 8px 14px;
   background: #11b6f0;
-  color: #00112d;
-  padding: 10px 16px;
   border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
 }
 
-/* HERO */
 .hero {
   position: relative;
-  height: 68vh;
-  background: url("/assets/hero.webp") center / cover no-repeat;
 }
+
+.hero img {
+  width: 100%;
+  display: block;
+}
+
 .hero-overlay {
   position: absolute;
-  inset: 0;
-  background: rgba(0, 17, 45, 0.45);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 60px;
-}
-.hero h1 {
-  color: #ffffff;
-  font-size: 3rem;
-  max-width: 640px;
-}
-.hero p {
-  margin-top: 14px;
-  color: #e6f4ff;
+  left: 8%;
+  bottom: 22%;
+  color: #fff;
+  max-width: 520px;
 }
 
-/* CONTENT */
-.content {
-  max-width: 900px;
-  margin: 80px auto;
-  padding: 0 24px;
+.hero-overlay h1 {
+  font-size: 3rem;
+  line-height: 1.1;
 }
+
+.hero-overlay p {
+  margin-top: 12px;
+}
+
 .intro {
-  margin-bottom: 48px;
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 24px;
   font-size: 1.1rem;
 }
-.services li {
-  margin-bottom: 10px;
+
+.services {
+  max-width: 900px;
+  margin: 0 auto 80px;
+  padding: 0 24px;
 }
 
-/* FOOTER */
+.services ul {
+  margin-top: 16px;
+}
+
+.services li {
+  margin-bottom: 8px;
+}
+
 .site-footer {
   background: linear-gradient(90deg, #00112d, #024e97);
-  color: #ffffff;
-  padding: 70px 24px;
+  color: #fff;
 }
-.footer-grid {
+
+.footer-inner {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
+  padding: 60px 24px;
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 40px;
 }
+
 .footer-brand img {
-  height: 76px;
+  height: 50px;
   margin-bottom: 16px;
 }
-.footer-socials a {
+
+.footer-brand .cta {
   display: inline-block;
-  margin-right: 14px;
-  color: #11b6f0;
-  text-decoration: none;
-}
-.footer-cta {
-  display: inline-block;
-  margin-top: 18px;
-  background: #11b6f0;
-  color: #00112d;
-  padding: 10px 18px;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-}
-.footer-email {
   margin-top: 12px;
-  font-size: 0.9rem;
+  background: #11b6f0;
+  padding: 10px 14px;
+  border-radius: 6px;
+  color: #00112d;
+  text-decoration: none;
 }
