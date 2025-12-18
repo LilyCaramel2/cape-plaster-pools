@@ -16,7 +16,7 @@ body {
   color: var(--navy);
 }
 
-/* ================= HEADER (STABILISED) ================= */
+/* ================= HEADER ================= */
 
 .site-header {
   background: var(--navy);
@@ -28,7 +28,7 @@ body {
 .header-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 14px 24px;
+  padding: 16px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -36,7 +36,7 @@ body {
 }
 
 .logo img {
-  height: 60px;
+  height: 72px;
   display: block;
 }
 
@@ -49,7 +49,7 @@ body {
 .main-nav a {
   color: var(--light);
   font-weight: 600;
-  font-size: 16px;
+  font-size: 15.5px;
   text-decoration: none;
 }
 
@@ -57,76 +57,14 @@ body {
   color: var(--bright);
 }
 
-.whatsapp-btn {
-  background: var(--bright);
-  color: var(--navy);
+.quote-btn {
+  border: 2px solid var(--bright);
+  color: var(--light);
   padding: 10px 16px;
   border-radius: 4px;
   font-weight: 700;
-  text-decoration: none;
   font-size: 15px;
-}
-
-/* ================= HERO ================= */
-
-.hero {
-  position: relative;
-  height: clamp(520px, 80vh, 760px);
-}
-
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 17, 45, 0.45);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 900px;
-  padding: clamp(80px, 15vh, 140px) 24px 0;
-  color: #ffffff;
-}
-
-.hero h1 {
-  font-size: clamp(32px, 5vw, 48px);
-  margin-bottom: 16px;
-}
-
-.hero p {
-  font-size: 18px;
-  margin-bottom: 28px;
-}
-
-.hero-cta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.btn {
-  padding: 14px 22px;
-  font-weight: 700;
   text-decoration: none;
-  border-radius: 4px;
-}
-
-.btn.primary {
-  background: var(--bright);
-  color: var(--navy);
-}
-
-.btn.secondary {
-  border: 2px solid #ffffff;
-  color: #ffffff;
 }
 
 /* ================= FOOTER ================= */
@@ -139,19 +77,20 @@ body {
 .footer-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 60px 24px;
+  padding: 52px 24px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 32px;
+  grid-template-columns: 2fr repeat(4, 1fr);
+  gap: 28px;
 }
 
 .footer-brand img {
   height: 60px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .footer-brand p {
   color: #D8F3FF;
+  font-size: 16px;
   line-height: 1.6;
 }
 
@@ -159,7 +98,7 @@ body {
 .footer-contact h3 {
   font-size: 18px;
   color: #9FF6FF;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .footer-col ul {
@@ -167,12 +106,18 @@ body {
 }
 
 .footer-col li {
-  font-size: 16px;
+  font-size: 15.5px;
   line-height: 1.6;
 }
 
 .footer-contact p {
-  margin-bottom: 8px;
+  font-size: 15.5px;
+  margin-bottom: 6px;
+}
+
+.footer-contact a {
+  color: #D8F3FF;
+  text-decoration: none;
 }
 
 .footer-whatsapp {
@@ -195,7 +140,7 @@ body {
 
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.15);
-  padding: 18px;
+  padding: 16px 24px;
   text-align: center;
   font-size: 13px;
   color: #CDEFFF;
@@ -206,15 +151,20 @@ body {
   text-decoration: none;
 }
 
+.footer-credit {
+  margin-top: 6px;
+  font-size: 13px;
+}
+
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 900px) {
-  .main-nav {
-    gap: 14px;
+  .footer-inner {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .footer-inner {
-    grid-template-columns: repeat(2, 1fr);
+  .footer-brand {
+    grid-column: 1 / -1;
   }
 }
 
@@ -223,7 +173,7 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .hero-content {
-    padding-top: 100px;
+  .main-nav {
+    display: none;
   }
 }
