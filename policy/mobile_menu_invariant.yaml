@@ -1,0 +1,109 @@
+# MOBILE MENU INVARIANT
+# Project: Cape Plaster & Pools
+# Dependency: ai_precommit_guardrail.yaml
+# Activation: Only when mobile navigation changes are requested
+
+mobile_menu:
+  enabled: false
+  applies_below_breakpoint: "mobile_only"
+
+  activation_conditions:
+    desktop_unchanged_required: true
+    tablet_unchanged_required: true
+    shared_logic_with_desktop_dropdowns: false
+  fail_if:
+    mobile_menu_present_on_desktop: true
+    css_only_activation_detected: true
+
+  header_protection:
+    fixed_height_required: true
+    height_invariant_open_closed: true
+    must_not:
+      - grow
+      - push_content_down
+      - shift_hero
+  fail_if:
+    header_height_changes: true
+
+  hero_protection:
+    hero_top_edge_fixed: true
+    must_not:
+      - move
+      - overlay_text
+      - duplicate_content
+      - be_pushed_down
+  fail_if:
+    hero_position_changes: true
+
+  presentation_model:
+    allowed_pattern:
+      - burger_trigger
+      - slide_in_panel
+      - fullscreen_overlay
+    panel_rules:
+      positioning: fixed
+      anchor: viewport
+      z_index: above_header_and_hero
+      outside_document_flow: true
+    forbidden_patterns:
+      - accordion_inside_header
+      - expanding_header
+      - inline_menu_lists
+      - push_down_navigation
+
+  cta_hierarchy:
+    primary_emotional: "WhatsApp"
+    structured: "Get a Quote"
+    rules:
+      header_cta_must_not_invert: true
+      new_ctas_forbidden: true
+      uncontrolled_duplication_forbidden: true
+    allowed_inside_mobile_menu:
+      - WhatsApp
+      - Get a Quote
+  fail_if:
+    cta_hierarchy_violated: true
+
+  content_scope:
+    allowed:
+      - main_navigation_links
+    forbidden:
+      - suburb_lists
+      - service_descriptions
+      - sales_copy
+
+  interaction_rules:
+    explicit_open_close: true
+    close_on_outside_tap: true
+    close_on_escape_key: true
+    background_scroll_locked: true
+    must_not_affect:
+      - body_layout
+      - header_layout
+      - hero_layout
+  fail_if:
+    layout_affected_by_menu_state: true
+
+  css_js_discipline:
+    visibility_control: "explicit_js_state"
+    inline_styles_allowed: false
+    duplicate_nav_markup_allowed: false
+    menu_markup_isolated: true
+
+  failure_handling:
+    rollback_on:
+      - header_growth
+      - hero_movement
+      - layout_shift
+      - cta_duplication
+      - text_dumping
+      - scroll_jump
+
+  implementation_order:
+    - desktop_verified_stable
+    - tablet_verified_unchanged
+    - mobile_menu_implemented
+    - hero_regression_check
+    - header_regression_check
+    - cta_hierarchy_check
+    - ship
