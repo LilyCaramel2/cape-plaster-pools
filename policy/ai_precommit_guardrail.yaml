@@ -1,0 +1,130 @@
+# AI PRE-COMMIT GUARDRAIL
+# Project: Cape Plaster & Pools
+# Purpose: Mandatory policy checks before any change
+
+project:
+  name: "Cape Plaster & Pools"
+  authority: "Cloudflare"
+  environment: "production"
+
+infrastructure:
+  single_origin_required: true
+  allowed_html_origins:
+    - cloudflare_pages
+  disallowed_html_origins:
+    - netlify
+    - hostinger
+  checks:
+    cloudflare_zone_active: true
+    custom_domain_matches_pages_dev: true
+  fail_if:
+    multiple_html_origins_detected: true
+
+cache:
+  purge_required_before_debug: true
+  acceptable_actions:
+    - cache_purge
+    - fresh_deploy
+  browser_check_required:
+    - hard_refresh
+    - incognito
+  fail_if:
+    visual_debug_without_cache_clear: true
+
+files:
+  required_structure:
+    - index.html
+    - styles.css
+    - assets/logo.svg
+    - assets/hero.webp
+    - partials/header.html
+    - partials/footer.html
+    - partials/include.js
+  forbidden_paths:
+    - dist/
+    - public/
+    - build/
+  fail_if:
+    duplicate_index_html: true
+    framework_detected: true
+
+partials:
+  header_source: "partials/header.html"
+  footer_source: "partials/footer.html"
+  injection_method: "browser_fetch"
+  rules:
+    index_must_not_contain_header_footer: true
+    include_js_scope_limited: true
+  fail_if:
+    header_footer_duplicated: true
+    server_side_includes_detected: true
+
+hero:
+  single_instance_only: true
+  required_container: ".hero"
+  spacing_control: "css_only"
+  forbidden:
+    - inline_styles
+    - duplicate_text_blocks
+  fail_if:
+    hero_text_on_white_background: true
+    hero_rendered_outside_container: true
+
+header:
+  desktop_rules:
+    single_line: true
+    no_wrapping: true
+  logo_control: "css_only"
+  cta_hierarchy:
+    header: "Get a Quote"
+    hero: "WhatsApp"
+  dropdowns_enabled: false
+  fail_if:
+    header_height_changes: true
+    text_dumping_detected: true
+
+footer:
+  grid_rules:
+    medium_screen_single_row: true
+    logo_fills_first_column_without_overflow: true
+  contact_required:
+    area: "Noordhoek, Cape Town"
+    email: "quote@capeplasterandpools.co.za"
+    whatsapp_cta: true
+  socials:
+    required: [facebook, instagram, linkedin]
+    style: "large_clickable_buttons"
+  footer_base:
+    designer_credit:
+      text: "Designed by Caramel Digital Design"
+      link: "https://www.carameldigitaldesign.online"
+  fail_if:
+    grid_breaks: true
+    missing_contact_details: true
+
+css:
+  inline_css_allowed: false
+  ad_hoc_spacing_allowed: false
+  allowed_logo_selectors:
+    - ".logo img"
+    - ".footer-brand img"
+  hero_spacing_selector: ".hero-content"
+  fail_if:
+    conflicting_rules_detected: true
+
+change_control:
+  scope:
+    max_sections_per_change: 1
+    max_file_groups_per_change: 1
+  rules:
+    architectural_changes_mid_stage: false
+    quick_fixes_allowed: false
+  rollback_required_on:
+    - duplicate_content
+    - layout_shift
+    - unexplained_spacing
+
+enforcement:
+  on_violation:
+    action: "abort_change"
+    message: "Guardrail violation detected. Fix infrastructure or rollback before proceeding."
