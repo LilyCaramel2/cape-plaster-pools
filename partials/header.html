@@ -1,12 +1,4 @@
-<!--
-POLICY-GATED FILE
-Validated against /policy and /docs before generation.
-Do not modify outside approved batch tasks.
--->
-<header>
-  <a href="/" aria-label="Cape Plaster & Pools home">
-    Logo
-  </a><header class="site-header">
+<header class="site-header">
   <div class="site-header__inner">
     <a href="./index.html" class="site-header__brand">
       <span class="site-header__logo-wrap">
@@ -14,28 +6,53 @@ Do not modify outside approved batch tasks.
       </span>
       <span>
         <span class="site-header__name">Cape Plaster &amp; Pools</span><br>
-        <span class="site-header__tagline">Premium pool finishes</span>
+        <span class="site-header__tagline">Plastering, pools &amp; home maintenance</span>
       </span>
     </a>
-    <nav class="site-header__nav" aria-label="Main">
-      <a href="#services" class="site-header__link">Services</a>
-      <span class="site-header__pill">Cape Town &amp; Western Cape</span>
-      <a href="https://wa.me/27820000000" class="btn btn--outline" target="_blank" rel="noopener">
-        WhatsApp a quote
-      </a>
+
+    <nav class="site-header__nav" aria-label="Main navigation">
+      <div class="site-header__menu">
+        <a href="./index.html" class="site-header__link">Home</a>
+
+        <div class="site-header__dropdown">
+          <button class="site-header__dropdown-toggle site-header__link" type="button">
+            Services
+            <span aria-hidden="true">▾</span>
+          </button>
+          <div class="site-header__dropdown-menu">
+            <a href="/services/fix-and-supply" class="site-header__dropdown-item">Fix &amp; Supply Projects</a>
+            <a href="/services/home-maintenance" class="site-header__dropdown-item">Home Maintenance</a>
+            <a href="/services/plastering-finishes" class="site-header__dropdown-item">Plastering &amp; Finishes</a>
+            <a href="/services/pool-renovations" class="site-header__dropdown-item">Pool Renovations</a>
+            <a href="/services/waterproofing-repairs" class="site-header__dropdown-item">Waterproofing</a>
+            <a href="/services/stonework-paving" class="site-header__dropdown-item">Stonework &amp; Paving</a>
+            <a href="/services/solar-power" class="site-header__dropdown-item">Solar &amp; Power</a>
+          </div>
+        </div>
+
+        <div class="site-header__dropdown">
+          <button class="site-header__dropdown-toggle site-header__link" type="button">
+            Areas
+            <span aria-hidden="true">▾</span>
+          </button>
+          <div class="site-header__dropdown-menu">
+            <a href="/areas/southern-suburbs" class="site-header__dropdown-item">Southern Suburbs</a>
+            <a href="/areas/deep-south" class="site-header__dropdown-item">Deep South</a>
+            <a href="/areas/atlantic-seaboard" class="site-header__dropdown-item">Atlantic Seaboard</a>
+            <a href="/areas/winelands" class="site-header__dropdown-item">Winelands</a>
+            <a href="/areas/east-coast" class="site-header__dropdown-item">East Coast</a>
+          </div>
+        </div>
+
+        <a href="/gallery" class="site-header__link">Gallery</a>
+        <a href="/blog" class="site-header__link">Blog</a>
+        <a href="/about" class="site-header__link">About</a>
+        <a href="/contact" class="site-header__link">Contact</a>
+      </div>
+
+      <div class="site-header__ctas">
+        <a href="/contact" class="btn btn--ghost">Get a quote</a>
+      </div>
     </nav>
   </div>
-</header>
-
-
-  <nav aria-label="Main navigation">
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#areas">Areas</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
 </header>
