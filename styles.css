@@ -38,16 +38,55 @@ html, body {
   line-height: 1.5;
 }
 
-/* Header & footer containers */
-#site-header,
-#site-footer {
+/* =========================
+HEADER (FIXED, OPAQUE, SIZED)
+========================= */
+
+.site-header {
+  position: relative;
   width: 100%;
+  background: var(--blue-deep);
+  z-index: 20;
 }
 
-/* Buttons */
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  display: block;
+  height: 48px;
+  width: auto;
+  max-width: 180px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.main-nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.header-cta {
+  margin-left: 1rem;
+}
+
+/* =========================
+BUTTONS
+========================= */
+
 .btn {
   display: inline-block;
-  padding: 0.75rem 1.25rem;
+  padding: 0.65rem 1.2rem;
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
@@ -64,10 +103,13 @@ html, body {
   background: transparent;
 }
 
-/* Hero */
+/* =========================
+HERO (NO HEADER OVERLAY)
+========================= */
+
 .hero {
   position: relative;
-  min-height: 70vh;
+  min-height: 65vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -114,7 +156,10 @@ html, body {
   flex-wrap: wrap;
 }
 
-/* Services preview */
+/* =========================
+SERVICES PREVIEW
+========================= */
+
 .services-preview {
   padding: 4rem 2rem;
   background: var(--sand);
@@ -143,7 +188,10 @@ html, body {
   font-weight: 500;
 }
 
-/* Contact CTA */
+/* =========================
+CONTACT CTA
+========================= */
+
 .contact-cta {
   padding: 4rem 2rem;
   text-align: center;
