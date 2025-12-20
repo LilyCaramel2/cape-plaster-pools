@@ -1,6 +1,6 @@
 // partials/include.js
-// Loads header and footer into #site-header and #site-footer on every page.
-// Must work locally and on Cloudflare Pages (no absolute paths, no frameworks).
+// Loads header.html into #site-header and footer.html into #site-footer
+// using relative paths so it works locally, on Netlify, and on Cloudflare Pages.
 
 (function () {
   function injectPartial(targetId, partialPath) {
@@ -16,19 +16,28 @@
       })
       .then(function (html) {
         container.innerHTML = html;
+
+        // After footer is injected, set dynamic year if needed
+        if (targetId === "site-footer") {
+          var yearEl = document.getElementById("cpp-year");
+          if (yearEl) {
+            yearEl.textContent = new Date().getFullYear();
+          }
+        }
       })
       .catch(function (error) {
         console.error(error);
       });
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", function () {
-      injectPartial("site-header", "./partials/header.html");
-      injectPartial("site-footer", "./partials/footer.html");
-    });
-  } else {
+  function init() {
     injectPartial("site-header", "./partials/header.html");
     injectPartial("site-footer", "./partials/footer.html");
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
   }
 })();
