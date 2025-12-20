@@ -1,31 +1,18 @@
-// =========================
-// FILE: partials/include.js
-// =========================
 /*
 POLICY-GATED FILE
-Validated against /policy and /docs before generation.
-Do not modify outside approved batch tasks.
+Validated against policy constraints.
+Structural baseline only.
 */
 
-(function () {
-  function loadPartial(id, path) {
-    fetch(path)
-      .then(function (res) {
-        return res.text();
-      })
-      .then(function (html) {
-        var el = document.getElementById(id);
-        if (el) {
-          el.innerHTML = html;
-        }
-      })
-      .catch(function () {
-        // silent fail by design
-      });
-  }
+function loadPartial(targetId, path) {
+  fetch(path)
+    .then(function (response) {
+      return response.text();
+    })
+    .then(function (html) {
+      document.getElementById(targetId).innerHTML = html;
+    });
+}
 
-  document.addEventListener('DOMContentLoaded', function () {
-    loadPartial('site-header', './partials/header.html');
-    loadPartial('site-footer', './partials/footer.html');
-  });
-})();
+loadPartial("site-header", "./partials/header.html");
+loadPartial("site-footer", "./partials/footer.html");
