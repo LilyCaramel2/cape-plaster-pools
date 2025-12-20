@@ -5,7 +5,7 @@ Do not modify outside approved batch tasks.
 */
 
 /* =========================
-   GLOBAL RESET (SAFE)
+   GLOBAL SAFETY
    ========================= */
 
 *,
@@ -19,51 +19,57 @@ body {
 }
 
 /* =========================
-   HEADER ALIGNMENT FIX
+   HEADER LAYOUT FIX (STRUCTURE-AGNOSTIC)
    ========================= */
 
-/* Base header container */
+/* Treat header as the flex container */
 header {
+  display: flex;
+  align-items: center;            /* vertical alignment */
+  justify-content: space-between; /* logo | nav | CTA */
+  gap: 32px;
+  padding: 16px 32px;
   width: 100%;
 }
 
-/* Inner header layout */
-header > .header-inner,
-header .header-inner {
+/* Ensure direct children don’t stack */
+header > * {
   display: flex;
-  align-items: center;          /* vertical centering */
-  justify-content: space-between;
-  gap: 32px;                    /* consistent spacing */
-  padding: 16px 32px;           /* vertical rhythm */
+  align-items: center;
 }
 
 /* Logo */
-header .logo,
+header img,
 header svg,
-header img {
+header .logo {
   display: block;
-  max-height: 48px;             /* prevents vertical jump */
+  max-height: 48px;
   height: auto;
 }
 
-/* Navigation */
-header nav {
+/* Navigation list */
+header nav,
+header ul {
   display: flex;
   align-items: center;
   gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 /* Navigation links */
-header nav a {
+header a {
   display: inline-flex;
   align-items: center;
   line-height: 1;
-  padding: 8px 0;
+  padding: 6px 0;
 }
 
-/* WhatsApp CTA */
+/* WhatsApp CTA (if present) */
 header .whatsapp,
 header .whatsapp-button,
+header .cta,
 header .cta-whatsapp {
   display: inline-flex;
   align-items: center;
@@ -78,17 +84,14 @@ header .cta-whatsapp {
    ========================= */
 
 @media (max-width: 900px) {
-  header > .header-inner,
-  header .header-inner {
+  header {
     padding: 14px 20px;
     gap: 20px;
   }
 }
 
 @media (max-width: 720px) {
-  header > .header-inner,
-  header .header-inner {
-    flex-wrap: wrap;             /* avoids overflow */
-    justify-content: space-between;
+  header {
+    flex-wrap: wrap;              /* prevents overflow */
   }
 }
