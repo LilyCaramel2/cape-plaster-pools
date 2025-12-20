@@ -1,7 +1,94 @@
 /*
 POLICY-GATED FILE
-Validated against policy constraints.
-Structural baseline only.
+Validated against /policy and /docs before generation.
+Do not modify outside approved batch tasks.
 */
 
-/* intentionally empty – no styling */
+/* =========================
+   GLOBAL RESET (SAFE)
+   ========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* =========================
+   HEADER ALIGNMENT FIX
+   ========================= */
+
+/* Base header container */
+header {
+  width: 100%;
+}
+
+/* Inner header layout */
+header > .header-inner,
+header .header-inner {
+  display: flex;
+  align-items: center;          /* vertical centering */
+  justify-content: space-between;
+  gap: 32px;                    /* consistent spacing */
+  padding: 16px 32px;           /* vertical rhythm */
+}
+
+/* Logo */
+header .logo,
+header svg,
+header img {
+  display: block;
+  max-height: 48px;             /* prevents vertical jump */
+  height: auto;
+}
+
+/* Navigation */
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Navigation links */
+header nav a {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  padding: 8px 0;
+}
+
+/* WhatsApp CTA */
+header .whatsapp,
+header .whatsapp-button,
+header .cta-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  padding: 10px 18px;
+  line-height: 1;
+}
+
+/* =========================
+   RESPONSIVE SAFETY
+   ========================= */
+
+@media (max-width: 900px) {
+  header > .header-inner,
+  header .header-inner {
+    padding: 14px 20px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 720px) {
+  header > .header-inner,
+  header .header-inner {
+    flex-wrap: wrap;             /* avoids overflow */
+    justify-content: space-between;
+  }
+}
