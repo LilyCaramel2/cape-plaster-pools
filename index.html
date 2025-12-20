@@ -1,83 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Cape Plaster &amp; Pools | Coastal Plastering, Pools &amp; Finishes</title>
-    <meta
-      name="description"
-      content="Cape Town plastering, pool replastering and exterior finishes built for coastal weather. Careful repairs, full pool renewals and modern finishes for established homes."
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preload" href="assets/hero.webp" as="image" />
-    <link rel="stylesheet" href="assets/styles.css" />
-  </head>
-  <body>
-    <div id="site-header"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cape Plaster &amp; Pools | Premium Pool Renovations in Cape Town</title>
+  <meta name="description" content="Cape Plaster &amp; Pools specialises in premium pool renovations, new pool builds, and professional waterproofing across Cape Town and the Western Cape.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <!-- Header placeholder -->
+  <div id="site-header"></div>
 
-    <main>
-      <section class="hero">
-        <div class="hero__media">
-          <picture>
-            <source srcset="assets/hero.webp" type="image/webp" />
-            <img
-              src="assets/hero.webp"
-              alt="Clean coastal pool and plastered exterior in Cape Town"
-              loading="lazy"
-              decoding="async"
-            />
-          </picture>
-        </div>
-
-        <div class="hero__content">
-          <p class="hero__eyebrow">Coastal plastering, pools &amp; finishes</p>
-          <h1 class="hero__title">
-            Coastal homes, pools and plaster work that stay sharp in Cape Town weather.
-          </h1>
-          <p class="hero__lead">
-            Cape Plaster &amp; Pools renews pools, plaster and exterior finishes for established homes
-            along the South Peninsula, Southern Suburbs and Atlantic Seaboard so they match your views
-            and handle salt, sun and south-easter.
+  <!-- Hero section -->
+  <main>
+    <section class="hero">
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <div class="hero__text">
+          <h1 class="hero__title">Premium pool renovations &amp; new builds</h1>
+          <p class="hero__subtitle">
+            Specialist pool plastering, marbelite, and waterproofing for discerning homes across Cape Town and the Western Cape.
           </p>
-
-          <div class="hero__actions">
-            <a
-              href="https://wa.me/27796641791?text=Hi%20Cape%20Plaster%20%26%20Pools%2C%20I%27d%20like%20to%20chat%20about%20plaster%2C%20pool%20or%20exterior%20work."
-              class="button button--primary button--whatsapp"
-            >
-              WhatsApp the site team
+          <div class="hero__cta-group">
+            <a href="#services" class="btn btn--primary">View services</a>
+            <a href="https://wa.me/27820000000" class="btn btn--outline" target="_blank" rel="noopener">
+              WhatsApp a quote
             </a>
-            <button class="button button--ghost" type="button" data-scroll-target="#intro">
-              View services overview
-            </button>
           </div>
-
-          <ul class="hero__highlights">
-            <li>Full pool replastering, waterproofing and coping for coastal conditions.</li>
-            <li>Interior and exterior plaster repairs that blend into existing finishes.</li>
-            <li>Planned maintenance days to keep walls, pools and exteriors camera-ready.</li>
-          </ul>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="intro" class="intro">
-        <div class="intro__content">
-          <h2>Built for established coastal homes</h2>
-          <p>
-            The team combines a master Zim plasterer and a trained crew with structured project
-            management, clear updates and tidy sites so your home, tenants and neighbours stay
-            comfortable while work is underway.
-          </p>
-          <p>
-            Most projects sit in Fish Hoek, Kommetjie, Noordhoek and surrounding suburbs, with
-            selected work across the Southern Suburbs and Atlantic Seaboard for owners who want
-            clean, modern finishes without losing their home’s character.
-          </p>
+    <!-- Services teaser -->
+    <section id="services" class="section section--light">
+      <div class="section__inner">
+        <h2 class="section__title">What Cape Plaster &amp; Pools does best</h2>
+        <p class="section__intro">
+          From heritage restorations to contemporary new builds, every pool is finished with meticulous attention to detail and long-term durability in mind.
+        </p>
+        <div class="cards">
+          <article class="card">
+            <h3 class="card__title">Pool renovations</h3>
+            <p class="card__text">
+              Full resurfacing, crack repairs, and structural refurbishments to bring tired pools back to life.
+            </p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">New pool builds</h3>
+            <p class="card__text">
+              Turn-key concrete pools designed for your site, architecture, and lifestyle.
+            </p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Waterproofing &amp; finishes</h3>
+            <p class="card__text">
+              Marbelite, fibreglass conversions, and advanced waterproofing systems for lasting performance.
+            </p>
+          </article>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+  </main>
 
-    <div id="site-footer"></div>
+  <!-- Footer placeholder -->
+  <div id="site-footer"></div>
 
-    <script src="./partials/include.js"></script>
-  </body>
+  <script src="./partials/include.js" defer></script>
+</body>
 </html>
