@@ -1,6 +1,5 @@
 // partials/include.js
-// Loads header.html into #site-header and footer.html into #site-footer
-// using relative paths so it works locally, on Netlify, and on Cloudflare Pages.
+// Injects header and footer partials into the page using relative paths.
 
 (function () {
   function injectPartial(targetId, partialPath) {
@@ -17,7 +16,6 @@
       .then(function (html) {
         container.innerHTML = html;
 
-        // After footer is injected, set dynamic year if needed
         if (targetId === "site-footer") {
           var yearEl = document.getElementById("cpp-year");
           if (yearEl) {
