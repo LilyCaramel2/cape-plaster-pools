@@ -5,7 +5,7 @@ Do not modify outside approved batch tasks.
 */
 
 /* =========================
-   GLOBAL SAFETY
+   GLOBAL BASE
    ========================= */
 
 *,
@@ -19,89 +19,70 @@ body {
 }
 
 /* =========================
-   HEADER CORE LAYOUT
+   HEADER — BASELINE ONLY
    ========================= */
 
 header {
   display: flex;
   align-items: center;
+  gap: 32px;
   padding: 16px 32px;
-  gap: 40px;
   width: 100%;
 }
 
-/* Logo */
-header > a:first-child {
+/* Logo (assumed link or svg wrapper) */
+header > a:first-child,
+header > .logo {
   display: inline-flex;
   align-items: center;
   flex-shrink: 0;
 }
 
-/* =========================
-   NAV — TOP LEVEL ONLY
-   ========================= */
-
+/* Nav container */
 header nav {
   display: flex;
   align-items: center;
 }
 
-/* Top-level UL */
+/* Main menu — flat only */
 header nav > ul {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 24px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* Top-level LI */
+/* Main menu items */
 header nav > ul > li {
-  position: relative;
   display: inline-flex;
   align-items: center;
 }
 
-/* Top-level links */
+/* Main menu links */
 header nav > ul > li > a {
   display: inline-flex;
   align-items: center;
-  padding: 6px 0;
   line-height: 1;
-}
-
-/* =========================
-   SUBMENU — ISOLATED
-   ========================= */
-
-header nav ul ul {
-  position: absolute;
-  top: calc(100% + 6px);
-  left: 0;
-  display: none;
-  margin: 0;
-  padding: 8px 0;
-  list-style: none;
+  padding: 4px 0;
   white-space: nowrap;
-  z-index: 999;
-}
-
-/* Show on hover */
-header nav > ul > li:hover > ul {
-  display: block;
-}
-
-/* Submenu items */
-header nav ul ul li {
-  padding: 6px 16px;
 }
 
 /* =========================
-   RESPONSIVE SAFETY
+   HARD STOP: NO DROPDOWNS
    ========================= */
 
-@media (max-width: 720px) {
+/* Hide ALL nested menus completely */
+header nav ul ul {
+  display: none !important;
+}
+
+/* =========================
+   RESPONSIVE SAFETY (MINIMAL)
+   ========================= */
+
+@media (max-width: 768px) {
   header {
     flex-wrap: wrap;
     gap: 16px;
