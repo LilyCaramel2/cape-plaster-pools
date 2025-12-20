@@ -19,29 +19,95 @@ body {
 }
 
 /* =========================
-   HEADER BASE ALIGNMENT
+   HEADER CORE LAYOUT
    ========================= */
 
 header {
   display: flex;
   align-items: center;
-  gap: 32px;
   padding: 16px 32px;
+  gap: 40px;
   width: 100%;
 }
 
 /* Logo */
-header a:first-child {
+header > a:first-child {
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
-/* Nav container */
+/* =========================
+   NAV — TOP LEVEL ONLY
+   ========================= */
+
 header nav {
   display: flex;
   align-items: center;
 }
 
-/* Top-level nav list */
+/* Top-level UL */
 header nav > ul {
-  display: fl
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Top-level LI */
+header nav > ul > li {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Top-level links */
+header nav > ul > li > a {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 0;
+  line-height: 1;
+}
+
+/* =========================
+   SUBMENU — ISOLATED
+   ========================= */
+
+header nav ul ul {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  display: none;
+  margin: 0;
+  padding: 8px 0;
+  list-style: none;
+  white-space: nowrap;
+  z-index: 999;
+}
+
+/* Show on hover */
+header nav > ul > li:hover > ul {
+  display: block;
+}
+
+/* Submenu items */
+header nav ul ul li {
+  padding: 6px 16px;
+}
+
+/* =========================
+   RESPONSIVE SAFETY
+   ========================= */
+
+@media (max-width: 720px) {
+  header {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  header nav > ul {
+    flex-wrap: wrap;
+  }
+}
