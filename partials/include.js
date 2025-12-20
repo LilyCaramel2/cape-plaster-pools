@@ -1,15 +1,31 @@
-document.addEventListener("DOMContentLoaded", () => {
+// =========================
+// FILE: partials/include.js
+// =========================
+/*
+POLICY-GATED FILE
+Validated against /policy and /docs before generation.
+Do not modify outside approved batch tasks.
+*/
 
-  fetch("./partials/header.html")
-    .then(response => response.text())
-    .then(html => {
-      document.getElementById("site-header").innerHTML = html;
-    });
+(function () {
+  function loadPartial(id, path) {
+    fetch(path)
+      .then(function (res) {
+        return res.text();
+      })
+      .then(function (html) {
+        var el = document.getElementById(id);
+        if (el) {
+          el.innerHTML = html;
+        }
+      })
+      .catch(function () {
+        // silent fail by design
+      });
+  }
 
-  fetch("./partials/footer.html")
-    .then(response => response.text())
-    .then(html => {
-      document.getElementById("site-footer").innerHTML = html;
-    });
-
-});
+  document.addEventListener('DOMContentLoaded', function () {
+    loadPartial('site-header', './partials/header.html');
+    loadPartial('site-footer', './partials/footer.html');
+  });
+})();
