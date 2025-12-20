@@ -4,6 +4,130 @@ Validated against /policy and /docs before generation.
 Do not modify outside approved batch tasks.
 */
 
+/* =====================================================
+   GLOBAL RESET & BASELINE
+   ===================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.4;
+}
+
+/* =====================================================
+   HEADER — MAIN MENU LAYOUT (NO BRAND, NO DROPDOWNS)
+   ===================================================== */
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 20px 40px;
+}
+
+/* Logo */
+header > a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Navigation container */
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+/* Main menu list */
+header nav > ul {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Main menu items */
+header nav > ul > li {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Main menu links */
+header nav > ul > li > a {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 0;
+  line-height: 1;
+  text-decoration: none;
+}
+
+/* Subtle hierarchy: Home only */
+header nav > ul > li:first-child > a {
+  font-weight: 600;
+}
+
+/* =====================================================
+   MAIN CONTENT BASELINE
+   ===================================================== */
+
+main {
+  padding: 40px;
+}
+
+h1 {
+  margin: 0 0 16px 0;
+  font-size: 2rem;
+}
+
+p {
+  margin: 0 0 16px 0;
+}
+
+/* =====================================================
+   FOOTER — BASELINE ONLY
+   ===================================================== */
+
+footer {
+  padding: 32px 40px;
+}
+
+/* =====================================================
+   RESPONSIVE SAFETY (LAYOUT ONLY)
+   ===================================================== */
+
+@media (max-width: 900px) {
+  header {
+    gap: 24px;
+    padding: 16px 24px;
+  }
+
+  header nav > ul {
+    gap: 20px;
+  }
+
+  main {
+    padding: 24px;
+  }
+
+  footer {
+    padding: 24px;
+  }
+}
+/*
+POLICY-GATED FILE
+Validated against /policy and /docs before generation.
+Do not modify outside approved batch tasks.
+*/
+
 /* ===== GLOBAL RESET ===== */
 
 *,
