@@ -95,6 +95,45 @@ body {
 }
 
 /* =========================
+   HERO (LOCKED)
+========================= */
+
+.hero {
+  padding: 96px 24px 88px;
+  background-color: #ffffff;
+}
+
+.hero-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0 0 16px 0;
+  font-size: 48px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.hero-sub {
+  margin: 0 auto 32px;
+  max-width: 720px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #334155;
+}
+
+.hero-cta {
+  margin-bottom: 24px;
+}
+
+.hero-areas {
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* =========================
    FOOTER (LOCKED)
 ========================= */
 
@@ -185,8 +224,19 @@ body {
     height: 52px;
   }
 
+  .hero {
+    padding: 72px 20px 64px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+  }
+
   .footer-inner {
     grid-template-columns: 1fr;
   }
 }
-
