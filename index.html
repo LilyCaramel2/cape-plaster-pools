@@ -1,45 +1,57 @@
+<!-- =========================
+FILE: index.html
+========================= -->
+<!--
+POLICY-GATED FILE
+Validated against /policy and /docs before generation.
+Do not modify outside approved batch tasks.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cape Plaster & Pools | Plastering, Pools & Home Maintenance</title>
-  <link rel="stylesheet" href="/styles.css" />
+  <title>Cape Plaster & Pools | Premium Plastering, Pools & Finishes</title>
+  <meta name="description" content="Premium plastering, pool renovations, tiling and stonework for Cape Town homes. Clean finishes. Reliable service. Get a fast quote." />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-
-  <!-- Header injected via include.js -->
+  <div id="site-header"></div>
 
   <main>
     <section class="hero">
+      <img src="./assets/hero.webp" alt="Luxury pool and plaster finishes in Cape Town" class="hero-bg" />
       <div class="hero-inner">
-        <h1>Homes. Finished. Maintained. Managed.</h1>
-
-        <p class="hero-sub">
-          Professional plastering, pool renovations, tiling and reliable home maintenance
-          for quality homes across Cape Town.
-        </p>
-
+        <h1>High-quality finishes for Cape Town homes</h1>
+        <p>Expert plastering, pool renovations, tiling and stonework delivered with care and precision.</p>
         <div class="hero-cta">
-          <a
-            href="https://wa.me/27766125035"
-            class="btn btn-primary"
-            target="_blank"
-            rel="noopener"
-          >
-            Get a Quote on WhatsApp
-          </a>
+          <a class="btn primary" href="https://wa.me/27766125035?text=Hi%20Cape%20Plaster%20and%20Pools%20%E2%80%93%20Website%20enquiry">WhatsApp us</a>
+          <a class="btn secondary" href="#contact">Get a quote</a>
         </div>
-
-        <p class="hero-areas">
-          Southern Suburbs · Deep South · Atlantic Seaboard
-        </p>
       </div>
+    </section>
+
+    <section class="services-preview">
+      <h2>Our core services</h2>
+      <ul class="services-grid">
+        <li>Plastering & Skimming</li>
+        <li>Pool Renovations & Replastering</li>
+        <li>Tiling & Paving</li>
+        <li>Stonework & Feature Walls</li>
+        <li>Waterproofing & Repairs</li>
+        <li>General Renovations</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="contact-cta">
+      <h2>Talk to us about your project</h2>
+      <p>Send photos on WhatsApp for quick feedback and site visits.</p>
+      <a class="btn primary" href="https://wa.me/27766125035?text=Hi%20Cape%20Plaster%20and%20Pools%20%E2%80%93%20Website%20enquiry">Start on WhatsApp</a>
     </section>
   </main>
 
-  <!-- Footer injected via include.js -->
+  <div id="site-footer"></div>
 
-  <script src="/partials/include.js"></script>
+  <script src="./partials/include.js"></script>
 </body>
 </html>
