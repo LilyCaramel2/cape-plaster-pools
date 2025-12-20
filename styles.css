@@ -4,6 +4,60 @@ Validated against /policy and /docs before generation.
 Do not modify outside approved batch tasks.
 */
 
+/* ===== GLOBAL RESET ===== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/* ===== HEADER — BASELINE ONLY ===== */
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 16px 24px;
+}
+
+/* Logo */
+header > a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Navigation */
+header nav > ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+header nav a {
+  text-decoration: none;
+}
+
+/* ===== FOOTER — BASELINE ONLY ===== */
+
+footer {
+  padding: 24px;
+}
+/*
+POLICY-GATED FILE
+Validated against /policy and /docs before generation.
+Do not modify outside approved batch tasks.
+*/
+
 /* =========================
    GLOBAL BASE
    ========================= */
