@@ -1,6 +1,5 @@
 // partials/include.js
 // Injects header and footer partials into the page using relative paths.
-
 (function () {
   function injectPartial(targetId, partialPath) {
     var container = document.getElementById(targetId);
@@ -16,6 +15,7 @@
       .then(function (html) {
         container.innerHTML = html;
 
+        // After footer loads, set current year in copyright
         if (targetId === "site-footer") {
           var yearEl = document.getElementById("cpp-year");
           if (yearEl) {
@@ -29,8 +29,9 @@
   }
 
   function init() {
-    injectPartial("site-header", "./partials/header.html");
-    injectPartial("site-footer", "./partials/footer.html");
+    // include.js is inside /partials/, so go up one level, then into /partials/
+    injectPartial("site-header", "../partials/header.html");
+    injectPartial("site-footer", "../partials/footer.html");
   }
 
   if (document.readyState === "loading") {
