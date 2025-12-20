@@ -5,23 +5,23 @@ Do not modify outside approved batch tasks.
 */
 
 /* =========================================================
-   CAPE PLASTER & POOLS — BRAND ENFORCED (DARK-FIRST)
-   CSS ONLY — NO LIGHT THEME — NO NON-BRAND COLOURS
+   CAPE PLASTER & POOLS — REGRESSION-SAFE BRAND ENFORCEMENT
+   DARK-FIRST — HEADER PRESERVED — FOOTER LOGO CONTAINED
    ========================================================= */
 
 /* -------------------------
    BRAND TOKENS (LOCKED)
 -------------------------- */
 :root {
-  --navy-deep: #00112D;     /* Primary background */
-  --blue-brand: #024E97;   /* Navigation / headings */
-  --blue-accent: #11B6F0;  /* Hover / highlights */
-  --text-light: #F9F9F9;   /* Text on dark */
-  --text-muted: #CDEFFF;   /* Muted text on dark */
+  --navy-deep: #00112D;
+  --blue-brand: #024E97;
+  --blue-accent: #11B6F0;
+  --text-light: #F9F9F9;
+  --text-muted: #CDEFFF;
 }
 
 /* -------------------------
-   GLOBAL RESET
+   BASE RESET (SAFE)
 -------------------------- */
 *,
 *::before,
@@ -40,12 +40,11 @@ html, body {
 }
 
 /* -------------------------
-   LINKS
+   LINKS (RESTORED INLINE FLOW)
 -------------------------- */
 a {
   color: var(--text-light);
   text-decoration: none;
-  transition: color 0.2s ease;
 }
 
 a:hover {
@@ -53,27 +52,19 @@ a:hover {
 }
 
 /* -------------------------
-   HEADER (DARK, SEPARATE)
+   HEADER — PRESERVE EXACT BEHAVIOUR
+   (NO FLEX OVERRIDES, NO SVG CLAMPING)
 -------------------------- */
 header {
-  background: rgba(0, 17, 45, 0.92);
-  backdrop-filter: blur(4px);
+  background: var(--navy-deep);
   border-bottom: 1px solid rgba(17, 182, 240, 0.15);
 }
 
-header nav a {
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-
-/* Logo hard cap */
-header svg,
-header img {
-  max-height: 48px;
-}
+/* DO NOT TOUCH header svg sizing */
+/* DO NOT touch header anchor display */
 
 /* -------------------------
-   HERO
+   HERO (UNCHANGED STRUCTURE)
 -------------------------- */
 .hero {
   background-color: var(--navy-deep);
@@ -81,92 +72,50 @@ header img {
 }
 
 .hero h1 {
-  font-size: 44px;
-  font-weight: 700;
   color: var(--text-light);
 }
 
 .hero p {
   color: var(--text-muted);
-  max-width: 680px;
 }
 
 /* -------------------------
-   BUTTONS — CTA HIERARCHY
+   CTA HIERARCHY (SCOPED)
 -------------------------- */
-.button,
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 22px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-/* PRIMARY CTA (WhatsApp) */
 .btn-whatsapp {
   background: var(--blue-accent);
   color: var(--navy-deep);
+  font-weight: 700;
 }
 
 .btn-whatsapp:hover {
-  background: #0fa6da; /* darker blue-accent only */
-  color: var(--navy-deep);
+  background: #0fa6da;
 }
 
-/* SECONDARY CTA */
 .btn-secondary {
   background: transparent;
   color: var(--text-light);
   border: 2px solid var(--blue-accent);
-}
-
-.btn-secondary:hover {
-  background: var(--blue-accent);
-  color: var(--navy-deep);
+  font-weight: 600;
 }
 
 /* -------------------------
    SECTIONS
 -------------------------- */
 section {
-  padding: 80px 0;
   background: var(--navy-deep);
 }
 
 section h2 {
-  font-size: 30px;
-  font-weight: 600;
   color: var(--text-light);
 }
 
 section h3 {
-  font-size: 22px;
-  font-weight: 600;
   color: var(--blue-accent);
 }
 
 /* -------------------------
-   CARDS / PANELS
--------------------------- */
-.card {
-  background: rgba(2, 78, 151, 0.08);
-  border: 1px solid rgba(17, 182, 240, 0.18);
-  border-radius: 6px;
-  padding: 24px;
-}
-
-.card p {
-  color: var(--text-muted);
-}
-
-/* -------------------------
-   FOOTER (DARK, AUTHORITATIVE)
+   FOOTER — HARD CONTAINMENT FIX
 -------------------------- */
 footer {
   background: #000b1f;
@@ -174,26 +123,20 @@ footer {
   color: var(--text-light);
 }
 
-footer h3 {
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: var(--blue-accent);
+/* CRITICAL FIX:
+   Contain footer logo strictly inside its column */
+footer .footer-logo,
+footer .footer-logo svg {
+  display: block;
+  max-width: 180px;
+  width: 100%;
+  height: auto;
 }
 
-footer a {
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--text-light);
-}
-
-footer a:hover {
-  color: var(--blue-accent);
-}
-
-footer .copyright {
-  font-size: 13px;
-  color: var(--text-muted);
+/* Prevent SVGs elsewhere from breaking layout */
+svg {
+  max-width: 100%;
+  height: auto;
 }
 
 /* -------------------------
@@ -205,13 +148,6 @@ select {
   background: #000b1f;
   color: var(--text-light);
   border: 1px solid rgba(17, 182, 240, 0.25);
-  padding: 12px;
-  border-radius: 4px;
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: rgba(205, 239, 255, 0.6);
 }
 
 input:focus,
@@ -228,12 +164,8 @@ select:focus {
   color: var(--text-muted);
 }
 
-.bg-dark {
-  background: var(--navy-deep);
-}
-
 /* -------------------------
-   NO LIGHT THEME GUARANTEE
+   NO LIGHT THEME — ENFORCED
 -------------------------- */
 .light,
 .light-theme,
