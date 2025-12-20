@@ -19,13 +19,12 @@ body {
 }
 
 /* =========================
-   HEADER — HARD ALIGNMENT FIX
+   HEADER BASE ALIGNMENT
    ========================= */
 
 header {
   display: flex;
-  align-items: center;              /* vertical centering */
-  justify-content: flex-start;      /* prevent auto push */
+  align-items: center;
   gap: 32px;
   padding: 16px 32px;
   width: 100%;
@@ -35,63 +34,14 @@ header {
 header a:first-child {
   display: inline-flex;
   align-items: center;
-  margin-right: 24px;
 }
 
-/* Navigation container */
+/* Nav container */
 header nav {
   display: flex;
   align-items: center;
 }
 
-/* Navigation list — CRITICAL FIX */
-header nav ul {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-/* Navigation items */
-header nav li {
-  margin: 0;
-  padding: 0;
-}
-
-/* Navigation links */
-header nav a {
-  display: inline-flex;
-  align-items: center;
-  line-height: 1;
-  padding: 6px 0;
-}
-
-/* =========================
-   FUTURE CTA SAFETY
-   ========================= */
-
-header .whatsapp,
-header .cta,
-header .cta-whatsapp {
-  margin-left: auto;                /* CTA pushes right when added */
-  display: inline-flex;
-  align-items: center;
-  white-space: nowrap;
-}
-
-/* =========================
-   RESPONSIVE SAFETY
-   ========================= */
-
-@media (max-width: 720px) {
-  header {
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-
-  header nav ul {
-    flex-wrap: wrap;
-  }
-}
+/* Top-level nav list */
+header nav > ul {
+  display: fl
