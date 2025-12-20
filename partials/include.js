@@ -1,18 +1,16 @@
 /*
 POLICY-GATED FILE
-Validated against policy constraints.
-Structural baseline only.
+Validated against /policy and /docs before generation.
+Do not modify outside approved batch tasks.
 */
 
 function loadPartial(targetId, path) {
   fetch(path)
-    .then(function (response) {
-      return response.text();
-    })
-    .then(function (html) {
+    .then(response => response.text())
+    .then(html => {
       document.getElementById(targetId).innerHTML = html;
     });
 }
 
-loadPartial("site-header", "./partials/header.html");
-loadPartial("site-footer", "./partials/footer.html");
+loadPartial('site-header', './partials/header.html');
+loadPartial('site-footer', './partials/footer.html');
