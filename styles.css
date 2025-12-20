@@ -19,37 +19,33 @@ body {
 }
 
 /* =========================
-   HEADER LAYOUT FIX (STRUCTURE-AGNOSTIC)
+   HEADER — HARD ALIGNMENT FIX
    ========================= */
 
-/* Treat header as the flex container */
 header {
   display: flex;
-  align-items: center;            /* vertical alignment */
-  justify-content: space-between; /* logo | nav | CTA */
+  align-items: center;              /* vertical centering */
+  justify-content: flex-start;      /* prevent auto push */
   gap: 32px;
   padding: 16px 32px;
   width: 100%;
 }
 
-/* Ensure direct children don’t stack */
-header > * {
+/* Logo */
+header a:first-child {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 24px;
+}
+
+/* Navigation container */
+header nav {
   display: flex;
   align-items: center;
 }
 
-/* Logo */
-header img,
-header svg,
-header .logo {
-  display: block;
-  max-height: 48px;
-  height: auto;
-}
-
-/* Navigation list */
-header nav,
-header ul {
+/* Navigation list — CRITICAL FIX */
+header nav ul {
   display: flex;
   align-items: center;
   gap: 24px;
@@ -58,40 +54,44 @@ header ul {
   list-style: none;
 }
 
+/* Navigation items */
+header nav li {
+  margin: 0;
+  padding: 0;
+}
+
 /* Navigation links */
-header a {
+header nav a {
   display: inline-flex;
   align-items: center;
   line-height: 1;
   padding: 6px 0;
 }
 
-/* WhatsApp CTA (if present) */
+/* =========================
+   FUTURE CTA SAFETY
+   ========================= */
+
 header .whatsapp,
-header .whatsapp-button,
 header .cta,
 header .cta-whatsapp {
+  margin-left: auto;                /* CTA pushes right when added */
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   white-space: nowrap;
-  padding: 10px 18px;
-  line-height: 1;
 }
 
 /* =========================
    RESPONSIVE SAFETY
    ========================= */
 
-@media (max-width: 900px) {
-  header {
-    padding: 14px 20px;
-    gap: 20px;
-  }
-}
-
 @media (max-width: 720px) {
   header {
-    flex-wrap: wrap;              /* prevents overflow */
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  header nav ul {
+    flex-wrap: wrap;
   }
 }
