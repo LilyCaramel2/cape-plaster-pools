@@ -1,33 +1,67 @@
-<header>
-    <div class="header-container">
-        <a href="/" class="logo-link">
-            <img src="./assets/logo.svg" alt="Cape Plaster & Pools" class="logo">
-        </a>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li class="dropdown">
-                    <a href="/services">Services</a>
-                    <div class="dropdown-content">
-                        <a href="/services/plastering">Pool Plastering</a>
-                        <a href="/services/maintenance">Maintenance</a>
-                        <a href="/services/repairs">Repairs</a>
-                        <a href="/services/renovations">Renovations</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="/areas">Areas</a>
-                    <div class="dropdown-content">
-                        <a href="/areas/cape-town">Cape Town</a>
-                        <a href="/areas/stellenbosch">Stellenbosch</a>
-                        <a href="/areas/paarl">Paarl</a>
-                        <a href="/areas/somerset-west">Somerset West</a>
-                        <a href="/areas/hermanus">Hermanus</a>
-                    </div>
-                </li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact" class="header-cta">Get a Quote</a></li>
-            </ul>
+<!-- partials/header.html -->
+<!--
+ * POLICY-GATED FILE
+ * Validated against policy and docs before generation.
+ * Do not modify outside approved batch tasks.
+ * Source: POLICY-GATED-CPP-HANDOFF.md
+ * Date: 21 December 2025
+-->
+<header class="site-header">
+    <div class="header-inner">
+        <div class="header-left">
+            <a href="/" class="header-logo-link" aria-label="Cape Plaster &amp; Pools home">
+                <img src="./assets/cpp-logo.svg" alt="Cape Plaster &amp; Pools logo" class="header-logo" />
+            </a>
+        </div>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <div class="nav-toggle-bars">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </div>
+        </button>
+
+        <nav class="nav" aria-label="Main navigation">
+            <a href="/" class="nav-link nav-link-active">Home</a>
+
+            <div class="nav-dropdown" data-dropdown="services">
+                <button class="nav-dropdown-toggle" type="button">
+                    Services
+                    <span aria-hidden="true">▼</span>
+                </button>
+                <div class="nav-dropdown-menu">
+                    <a href="#services" class="nav-dropdown-item">Pool Services</a>
+                    <a href="#services" class="nav-dropdown-item">Plastering &amp; Finishes</a>
+                    <a href="#services" class="nav-dropdown-item">Stonework &amp; Paving</a>
+                    <a href="#services" class="nav-dropdown-item">Waterproofing &amp; Repairs</a>
+                    <a href="#services" class="nav-dropdown-item">Home Maintenance &amp; Fix Supply</a>
+                    <a href="#services" class="nav-dropdown-item">Landscaping &amp; Gardening</a>
+                </div>
+            </div>
+
+            <div class="nav-dropdown" data-dropdown="areas">
+                <button class="nav-dropdown-toggle" type="button">
+                    Areas
+                    <span aria-hidden="true">▼</span>
+                </button>
+                <div class="nav-dropdown-menu">
+                    <a href="#areas" class="nav-dropdown-item">Southern Suburbs</a>
+                    <a href="#areas" class="nav-dropdown-item">Deep South</a>
+                    <a href="#areas" class="nav-dropdown-item">Atlantic Seaboard</a>
+                    <a href="#areas" class="nav-dropdown-item">Heritage Belt</a>
+                </div>
+            </div>
+
+            <a href="#portfolio" class="nav-link">Portfolio</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </nav>
+
+        <div class="header-cta">
+            <a href="https://wa.me/27766125035?text=Hi%2C%20I%27d%20like%20a%20quote" class="button cta-primary" target="_blank" rel="noopener">
+                <span class="button-text">Get a quote</span>
+            </a>
+        </div>
     </div>
 </header>
