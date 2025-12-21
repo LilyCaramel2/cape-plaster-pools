@@ -1,42 +1,69 @@
 // partials/include.js
-// Injects header and footer partials into the page using relative paths.
+/*
+ * POLICY-GATED FILE
+ * Validated against policy and docs before generation.
+ * Do not modify outside approved batch tasks.
+ * Source: POLICY-GATED-CPP-HANDOFF.md
+ * Date: 21 December 2025
+ */
+
 (function () {
-  function injectPartial(targetId, partialPath) {
-    var container = document.getElementById(targetId);
-    if (!container) return;
-    
-    fetch(partialPath)
-      .then(function (response) {
-        if (!response.ok) {
-          throw new Error("Failed to load partial: " + partialPath);
-        }
-        return response.text();
-      })
-      .then(function (html) {
-        container.innerHTML = html;
-      })
-      .catch(function (error) {
-        throw new Error("Failed to load partial: " + partialPath);
-      });
-  }
+    function loadPartial(id, path) {
+        fetch(path)
+            .then(function (response) {
+                return response.text();
+            })
+            .then(function (html) {
+                var target = document.getElementById(id);
+                if (target) {
+                    target.innerHTML = html;
+                    if (id === "site-header") {
+                        bindHeaderInteractions();
+                    }
+                }
+            })
+            .catch(function () {
+                // Silent fail to avoid breaking page
+            });
+    }
 
-  // After footer loads, set current year in copyright
-  function injectPartial(targetId, partialPath) {
-    var container = document.getElementById(targetId);
-    if (!container) return;
-    
-    fetch(partialPath)
-      .then(function (response) {
-        if (!response.ok) {
-          throw new Error("Failed to load partial: " + partialPath);
-        }
-        return response.text();
-      })
-      .then(function (html) {
-        container.innerHTML = html;
-      });
-  }
+    function bindHeaderInteractions() {
+        var nav = document.querySelector(".nav");
+        var toggle = document.querySelector(".nav-toggle");
+        var dropdowns = document.querySelectorAll(".nav-dropdown");
 
-  injectPartial("header", "./partials/header.html");
-  injectPartial("footer", "./partials/footer.html");
+        if (toggle && nav) {
+            toggle.addEventListener("click", function () {
+                var open = nav.classList.toggle("open");
+                toggle.setAttribute("aria-expanded", open ? "true" : "false");
+            });
+        }
+
+        dropdowns.forEach(function (wrap) {
+            var button = wrap.querySelector(".nav-dropdown-toggle");
+            var menu = wrap.querySelector(".nav-dropdown-menu");
+
+            if (!button || !menu) return;
+
+            button.addEventListener("click", function (event) {
+                event.stopPropagation();
+                var isOpen = wrap.classList.contains("open");
+                dropdowns.forEach(function (other) {
+                    if (other !== wrap) other.classList.remove("open");
+                });
+                wrap.classList.toggle("open", !isOpen);
+            });
+        });
+
+        document.addEventListener("click", function () {
+            dropdowns.forEach(function (wrap) {
+                wrap.classList.remove("open");
+            });
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        loadPartial("site-header", "./partials/header.html");
+        loadPartial("site-footer", "./partials/footer.html");
+    });
 })();
