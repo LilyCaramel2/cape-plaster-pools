@@ -195,6 +195,15 @@ main {
     border-color: rgba(249, 249, 249, 0.4);
 }
 
+/* WhatsApp button - SMALLER */
+.cta-primary:has(.button-text:only-child) {
+    padding: 0.65rem 1.5rem;
+}
+
+.cta-primary .button-text {
+    font-size: 0.88rem;
+}
+
 /* Hero */
 .hero {
     display: grid;
@@ -214,18 +223,22 @@ main {
     order: 2;
 }
 
+/* Hero image - FILL ENTIRE CONTAINER */
 .hero-image-wrap {
     border-radius: 20px;
     overflow: hidden;
     position: relative;
     box-shadow: var(--shadow-soft);
     transform: translate3d(0, 0, 0);
+    min-height: 500px;
+    display: flex;
 }
 
 .hero-image {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    min-height: 500px;
     object-fit: cover;
 }
 
@@ -549,6 +562,25 @@ main {
     font-weight: 500;
     font-size: 0.95rem;
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+/* Dropdown triangle - SMALLER */
+.nav-dropdown-toggle::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid currentColor;
+    margin-left: 0.2rem;
+    transition: transform var(--transition-fast);
+}
+
+.nav-dropdown.open .nav-dropdown-toggle::after {
+    transform: rotate(180deg);
 }
 
 .nav-link-active {
@@ -556,8 +588,7 @@ main {
     color: var(--text-primary);
 }
 
-.nav-link::after,
-.nav-dropdown-toggle::after {
+.nav-link::after {
     content: "";
     position: absolute;
     left: 0;
@@ -568,8 +599,7 @@ main {
     transition: width var(--transition-fast);
 }
 
-.nav-link:hover::after,
-.nav-dropdown-toggle:hover::after {
+.nav-link:hover::after {
     width: 100%;
 }
 
@@ -738,14 +768,14 @@ main {
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.7);
 }
 
-/* WhatsApp pill */
+/* WhatsApp pill - SMALLER */
 .footer-whatsapp-cta {
     margin-top: 0.4rem;
 }
 
 .footer-whatsapp-cta .button {
-    padding-inline: 1.3rem;
-    font-size: 0.9rem;
+    padding: 0.55rem 1.2rem;
+    font-size: 0.85rem;
 }
 
 /* Footer area columns */
@@ -940,6 +970,14 @@ main {
         order: 1;
     }
 
+    .hero-image-wrap {
+        min-height: 350px;
+    }
+
+    .hero-image {
+        min-height: 350px;
+    }
+
     .section-about .about-inner,
     .section-contact .contact-inner {
         grid-template-columns: 1fr;
@@ -1011,6 +1049,14 @@ main {
 
     .hero {
         grid-template-columns: 1.1fr 1.1fr;
+    }
+
+    .hero-image-wrap {
+        min-height: 400px;
+    }
+
+    .hero-image {
+        min-height: 400px;
     }
 
     .section-areas .areas-grid {
