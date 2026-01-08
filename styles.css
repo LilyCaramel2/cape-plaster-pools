@@ -5,6 +5,7 @@
  * Do not modify outside approved batch tasks.
  * Source: POLICY-GATED-CPP-HANDOFF.md
  * Date: 9 January 2026
+ * UPDATE: Added lime green accent system (Jan 9, 2026)
  */
 
 /* Root tokens */
@@ -15,6 +16,9 @@
     --vivid-azure: #024e97;
     --bright-blue: #11b6f0;
     --light-grey: #f9f9f9;
+    
+    /* LIME GREEN ACCENT - NEW */
+    --lime-green: #7FFF00;
 
     /* Text Colors */
     --text-primary: #f9f9f9;
@@ -159,9 +163,11 @@ main {
     opacity: 1;
 }
 
+/* LIME GREEN GLOW on CTA hover */
 .cta-primary:hover {
     transform: translateY(-1px) scale(1.02);
-    box-shadow: 0 18px 48px rgba(0, 182, 255, 0.55);
+    box-shadow: 0 18px 48px rgba(0, 182, 255, 0.55),
+                0 0 30px rgba(127, 255, 0, 0.15);
 }
 
 .cta-secondary {
@@ -238,6 +244,22 @@ main {
     z-index: 2;
     max-width: 1000px;
     text-align: left;
+}
+
+/* LIME GREEN ACCENT LINE in hero */
+.hero h1::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--lime-green) 0%, transparent 100%);
+    margin-top: 16px;
+    animation: slideInLeft 0.6s ease;
+}
+
+@keyframes slideInLeft {
+    from { width: 0; opacity: 0; }
+    to { width: 80px; opacity: 1; }
 }
 
 .hero-lead {
@@ -513,7 +535,7 @@ main {
     filter: drop-shadow(0 0 20px rgba(17, 182, 240, 0.9));
 }
 
-/* Nav - SMALLER FONT */
+/* Nav - SMALLER FONT + LIME GREEN UNDERLINE HOVER */
 .nav {
     display: flex;
     align-items: center;
@@ -563,6 +585,7 @@ main {
     color: var(--text-primary);
 }
 
+/* LIME GREEN UNDERLINE on nav hover */
 .nav-link::after {
     content: "";
     position: absolute;
@@ -570,7 +593,7 @@ main {
     bottom: -0.35rem;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--bright-blue), transparent);
+    background: var(--lime-green);
     transition: width var(--transition-fast);
 }
 
@@ -626,6 +649,20 @@ main {
     gap: 0.75rem;
 }
 
+/* LIME GREEN PULSE DOT before phone */
+.header-cta::before {
+    content: '●';
+    color: var(--lime-green);
+    margin-right: 6px;
+    font-size: 8px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
 /* Mobile nav */
 .nav-toggle {
     display: none;
@@ -649,11 +686,11 @@ main {
     gap: 4px;
 }
 
-/* Footer - 5-COLUMN GRID */
+/* Footer - 5-COLUMN GRID - LOCKED PERMANENTLY */
 .site-footer {
     background: radial-gradient(circle at top, #00112d 0%, #000814 60%);
     border-top: 1px solid rgba(249, 249, 249, 0.14);
-    padding: 4rem 1.5rem 2.5rem;
+    padding: 4rem 1.5rem 0;
     color: var(--text-secondary);
 }
 
@@ -662,7 +699,7 @@ main {
     margin: 0 auto;
 }
 
-/* 5-column grid: Contact Hub (1.5fr) + 4 area columns (1fr each) */
+/* 5-column grid: Contact Hub (1.5fr) + 4 area columns (1fr each) - DESKTOP ONLY */
 .footer-grid {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
@@ -722,6 +759,7 @@ main {
     margin-bottom: 0.6rem;
 }
 
+/* LIME GREEN SOCIAL ICON HOVER */
 .footer-social-link {
     width: 32px;
     height: 32px;
@@ -733,17 +771,18 @@ main {
     color: var(--text-secondary);
     text-decoration: none;
     font-size: 0.85rem;
-    transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+    transition: all var(--transition-fast);
 }
 
 .footer-social-link:hover {
-    background: rgba(17, 182, 240, 0.18);
-    border-color: rgba(17, 182, 240, 0.75);
-    transform: translateY(-1px);
+    color: var(--lime-green);
+    background: rgba(127, 255, 0, 0.1);
+    border-color: var(--lime-green);
+    transform: scale(1.15) rotate(5deg);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.7);
 }
 
-/* WhatsApp pill - SMALLER */
+/* LIME GREEN WHATSAPP BUTTON */
 .footer-whatsapp-cta {
     margin-top: 0.4rem;
 }
@@ -751,6 +790,20 @@ main {
 .footer-whatsapp-cta .button {
     padding: 0.55rem 1.2rem;
     font-size: 0.85rem;
+    background: var(--lime-green);
+    color: var(--deep-dark-blue);
+    box-shadow: 0 4px 12px rgba(127, 255, 0, 0.3);
+}
+
+.footer-whatsapp-cta .button:hover {
+    background: #6ee600;
+    box-shadow: 0 6px 20px rgba(127, 255, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+.footer-whatsapp-cta .button-text {
+    color: var(--deep-dark-blue);
+    font-weight: 600;
 }
 
 /* Footer area columns */
@@ -801,10 +854,24 @@ main {
     width: 100%;
 }
 
+/* LIME GREEN ACCENT LINE - matches truck banner */
+.footer-accent-line {
+    height: 3px;
+    background: var(--lime-green);
+    width: 100%;
+    margin: 0;
+}
+
 /* Bottom row */
 .footer-bottom {
-    border-top: 1px solid rgba(249, 249, 249, 0.16);
-    padding-top: 1.2rem;
+    background: var(--dark-blue);
+    padding: 1.2rem 1.5rem;
+    margin: 0 -1.5rem;
+}
+
+.footer-bottom-inner {
+    max-width: var(--container-width);
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
@@ -997,7 +1064,7 @@ main {
         padding: 0.2rem;
     }
 
-    .footer-bottom {
+    .footer-bottom-inner {
         flex-direction: column;
         align-items: flex-start;
     }
@@ -1026,7 +1093,7 @@ main {
         flex: 1 1 48%;
     }
 
-    /* Footer: 2 columns on tablet (brand + areas stack in pairs) */
+    /* Footer: 2 columns on tablet */
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
@@ -1041,7 +1108,7 @@ main {
     }
 }
 
-/* Desktop */
+/* Desktop - 5-COLUMN FOOTER LOCKED */
 @media (min-width: 1024px) {
     h1 {
         font-size: 3.5rem;
@@ -1051,8 +1118,8 @@ main {
         width: 23%;
     }
 
-    /* Footer: Full 5-column grid on desktop */
+    /* Footer: Full 5-column grid on desktop - DO NOT CHANGE */
     .footer-grid {
-        grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr !important;
     }
 }
