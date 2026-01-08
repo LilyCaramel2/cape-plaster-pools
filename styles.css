@@ -537,6 +537,11 @@ main {
     gap: 0.25rem;
 }
 
+/* Hide any <span> triangles in markup */
+.nav-dropdown-toggle > span[aria-hidden] {
+    display: none;
+}
+
 /* Dropdown triangle - SMALLER & BASELINE-ALIGNED */
 .nav-dropdown-toggle::after {
     content: "";
@@ -946,8 +951,10 @@ main {
         flex: 1 1 100%;
     }
 
+    /* Footer stacks on mobile */
     .footer-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .section-about .about-inner,
@@ -1019,8 +1026,10 @@ main {
         flex: 1 1 48%;
     }
 
+    /* Footer: 2 columns on tablet (brand + areas stack in pairs) */
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
     }
 
     .section-areas .areas-grid {
@@ -1042,6 +1051,7 @@ main {
         width: 23%;
     }
 
+    /* Footer: Full 5-column grid on desktop */
     .footer-grid {
         grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
     }
