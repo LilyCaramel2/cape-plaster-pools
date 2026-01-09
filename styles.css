@@ -5,7 +5,7 @@
  * Do not modify outside approved batch tasks.
  * Source: POLICY-GATED-CPP-HANDOFF.md
  * Date: 9 January 2026
- * UPDATE: Restored vibrant colors, reduced glows (Jan 9, 2026)
+ * UPDATE: Tightened footer spacing (Jan 9, 2026)
  */
 
 /* Root tokens */
@@ -672,11 +672,11 @@ main {
     gap: 4px;
 }
 
-/* Footer - 5-COLUMN GRID */
+/* Footer - TIGHTENED SPACING */
 .site-footer {
     background: radial-gradient(circle at top, #00112d 0%, #000814 60%);
     border-top: 1px solid rgba(249, 249, 249, 0.14);
-    padding: 4rem 1.5rem 0;
+    padding: 3rem 1.5rem 0;
     color: var(--text-secondary);
 }
 
@@ -689,21 +689,21 @@ main {
 .footer-grid {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
-    gap: 2.8rem;
-    margin-bottom: 2.8rem;
+    gap: 2.2rem;
+    margin-bottom: 2rem;
 }
 
 .footer-brand {
     display: flex;
     flex-direction: column;
-    gap: 0.9rem;
+    gap: 0.7rem;
 }
 
 /* Footer logo - MINIMAL GLOW */
 .footer-logo {
-    height: 80px;
+    height: 75px;
     width: auto;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     filter: drop-shadow(0 0 3px rgba(17, 182, 240, 0.2));
 }
 
@@ -734,12 +734,17 @@ main {
 }
 
 .footer-byline {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     color: var(--text-dim);
+    line-height: 1.5;
 }
 
 .footer-contact {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
+}
+
+.footer-contact p {
+    margin-bottom: 0.3rem;
 }
 
 .footer-contact a {
@@ -749,8 +754,8 @@ main {
 
 .footer-social-row {
     display: flex;
-    gap: 0.55rem;
-    margin-bottom: 0.6rem;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 /* LIME GREEN GLOW on social icons - SUBTLE */
@@ -778,12 +783,12 @@ main {
 
 /* WhatsApp button - VIVID BLUE */
 .footer-whatsapp-cta {
-    margin-top: 0.4rem;
+    margin-top: 0.3rem;
 }
 
 .footer-whatsapp-cta .button {
-    padding: 0.55rem 1.2rem;
-    font-size: 0.85rem;
+    padding: 0.5rem 1.1rem;
+    font-size: 0.84rem;
     background: linear-gradient(135deg, #11b6f0, #024e97);
     color: var(--text-primary);
     box-shadow: 0 6px 18px rgba(17, 182, 240, 0.45);
@@ -807,12 +812,12 @@ main {
 }
 
 .footer-column-heading {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     font-weight: 600;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
     color: var(--text-dim);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.65rem;
 }
 
 .footer-link-list {
@@ -822,11 +827,11 @@ main {
 }
 
 .footer-link-list li + li {
-    margin-top: 0.3rem;
+    margin-top: 0.25rem;
 }
 
 .footer-link {
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     color: var(--text-secondary);
     text-decoration: none;
     position: relative;
@@ -850,16 +855,16 @@ main {
 
 /* LIME GREEN ACCENT LINE */
 .footer-accent-line {
-    height: 3px;
+    height: 2px;
     background: var(--lime-green);
     width: 100%;
     margin: 0;
 }
 
-/* Bottom row */
+/* Bottom row - TIGHTENED */
 .footer-bottom {
     background: var(--dark-blue);
-    padding: 1.2rem 1.5rem;
+    padding: 0.9rem 1.5rem;
     margin: 0 -1.5rem;
 }
 
@@ -868,16 +873,20 @@ main {
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.8rem;
     align-items: center;
     justify-content: space-between;
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     color: var(--text-dim);
+}
+
+.footer-bottom-inner > p {
+    margin: 0;
 }
 
 .footer-legal-links {
     display: flex;
-    gap: 1.1rem;
+    gap: 1rem;
 }
 
 .footer-legal-links a {
@@ -906,11 +915,11 @@ main {
 .footer-caramel {
     display: flex;
     align-items: center;
-    gap: 0.55rem;
+    gap: 0.45rem;
 }
 
 .footer-caramel-text {
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     color: var(--text-dim);
 }
 
@@ -920,8 +929,8 @@ main {
 }
 
 .lotus-wrap {
-    width: 34px;
-    height: 34px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background: radial-gradient(circle at top, rgba(255, 255, 255, 0.12), rgba(0, 17, 45, 0.98));
     display: inline-flex;
@@ -934,10 +943,10 @@ main {
 }
 
 .lotus-img {
-    width: 26px;
-    height: 26px;
+    width: 22px;
+    height: 22px;
     object-fit: contain;
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.3));
     transition: transform var(--transition-med), filter var(--transition-med);
 }
 
@@ -945,7 +954,7 @@ main {
 .lotus-wrap::before {
     content: "";
     position: absolute;
-    inset: -4px;
+    inset: -3px;
     border-radius: inherit;
     border: 1px solid rgba(17, 182, 240, 0.65);
     opacity: 0.6;
@@ -969,12 +978,12 @@ main {
 /* Lotus hover spin + glow */
 .lotus-wrap:hover {
     transform: translateY(-1px) scale(1.05);
-    box-shadow: 0 0 22px 4px rgba(255, 255, 255, 0.42);
+    box-shadow: 0 0 20px 3px rgba(255, 255, 255, 0.4);
 }
 
 .lotus-wrap:hover .lotus-img {
     transform: rotate(10deg) scale(1.08);
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.75));
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7));
 }
 
 /* Responsive breakpoints */
@@ -1015,11 +1024,11 @@ main {
     /* Mobile footer: single column stack */
     .footer-grid {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 2rem;
     }
 
     .footer-logo {
-        height: 65px;
+        height: 60px;
     }
 
     .section-about .about-inner,
@@ -1094,7 +1103,7 @@ main {
     /* Footer: Brand full width, then 2x2 grid */
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 2.5rem;
+        gap: 2rem;
     }
 
     .footer-brand {
@@ -1102,7 +1111,7 @@ main {
     }
 
     .footer-logo {
-        height: 70px;
+        height: 65px;
     }
 
     .section-areas .areas-grid {
