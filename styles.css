@@ -5,7 +5,7 @@
  * Do not modify outside approved batch tasks.
  * Source: POLICY-GATED-CPP-HANDOFF.md
  * Date: 9 January 2026
- * UPDATE: Added lime green accent system (Jan 9, 2026) - CLEANED
+ * UPDATE: Lime green accents refined (Jan 9, 2026)
  */
 
 /* Root tokens */
@@ -17,7 +17,7 @@
     --bright-blue: #11b6f0;
     --light-grey: #f9f9f9;
     
-    /* LIME GREEN ACCENT - NEW */
+    /* LIME GREEN ACCENT */
     --lime-green: #7FFF00;
 
     /* Text Colors */
@@ -745,7 +745,7 @@ main {
     margin-bottom: 0.6rem;
 }
 
-/* LIME GREEN SOCIAL ICON HOVER */
+/* LIME GREEN GLOW on social icons */
 .footer-social-link {
     width: 32px;
     height: 32px;
@@ -761,14 +761,15 @@ main {
 }
 
 .footer-social-link:hover {
-    color: var(--lime-green);
-    background: rgba(127, 255, 0, 0.1);
+    color: var(--text-primary);
+    background: rgba(127, 255, 0, 0.08);
     border-color: var(--lime-green);
-    transform: scale(1.15) rotate(5deg);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
+    box-shadow: 0 0 16px rgba(127, 255, 0, 0.4);
+    filter: drop-shadow(0 0 8px rgba(127, 255, 0, 0.6));
 }
 
-/* LIME GREEN WHATSAPP BUTTON */
+/* WhatsApp button - BLUE GRADIENT (matches header CTA) */
 .footer-whatsapp-cta {
     margin-top: 0.4rem;
 }
@@ -776,19 +777,19 @@ main {
 .footer-whatsapp-cta .button {
     padding: 0.55rem 1.2rem;
     font-size: 0.85rem;
-    background: var(--lime-green);
-    color: var(--deep-dark-blue);
-    box-shadow: 0 4px 12px rgba(127, 255, 0, 0.3);
+    background: linear-gradient(135deg, var(--bright-blue), var(--vivid-azure));
+    color: var(--text-primary);
+    box-shadow: 0 8px 20px rgba(0, 182, 255, 0.35);
 }
 
 .footer-whatsapp-cta .button:hover {
-    background: #6ee600;
-    box-shadow: 0 6px 20px rgba(127, 255, 0, 0.4);
+    background: linear-gradient(135deg, var(--bright-blue), var(--vivid-azure));
+    box-shadow: 0 10px 28px rgba(0, 182, 255, 0.5);
     transform: translateY(-2px);
 }
 
 .footer-whatsapp-cta .button-text {
-    color: var(--deep-dark-blue);
+    color: var(--text-primary);
     font-weight: 600;
 }
 
@@ -1004,10 +1005,26 @@ main {
         flex: 1 1 100%;
     }
 
-    /* Footer stacks on mobile */
+    /* Mobile footer: Brand column full width, then 2 columns for areas */
     .footer-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 2.5rem;
+    }
+
+    /* First child (brand) stays full width */
+    .footer-brand {
+        grid-column: 1;
+    }
+
+    /* Area columns in 2-column grid on mobile */
+    .footer-areas-column:nth-child(2),
+    .footer-areas-column:nth-child(3) {
+        grid-column: 1;
+    }
+
+    .footer-areas-column:nth-child(4),
+    .footer-areas-column:nth-child(5) {
+        grid-column: 1;
     }
 
     .section-about .about-inner,
@@ -1079,10 +1096,14 @@ main {
         flex: 1 1 48%;
     }
 
-    /* Footer: 2 columns on tablet */
+    /* Footer: Brand full width, then 2x2 grid for areas */
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
+        gap: 2.5rem;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
     }
 
     .section-areas .areas-grid {
