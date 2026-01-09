@@ -5,7 +5,7 @@
  * Do not modify outside approved batch tasks.
  * Source: POLICY-GATED-CPP-HANDOFF.md
  * Date: 9 January 2026
- * UPDATE: Added lime green accent system (Jan 9, 2026)
+ * UPDATE: Added lime green accent system (Jan 9, 2026) - CLEANED
  */
 
 /* Root tokens */
@@ -647,20 +647,6 @@ main {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-}
-
-/* LIME GREEN PULSE DOT before phone */
-.header-cta::before {
-    content: '●';
-    color: var(--lime-green);
-    margin-right: 6px;
-    font-size: 8px;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
 }
 
 /* Mobile nav */
