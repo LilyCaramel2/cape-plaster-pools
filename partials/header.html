@@ -1,67 +1,86 @@
-<!-- partials/header.html -->
-<!--
- * POLICY-GATED FILE
- * Validated against policy and docs before generation.
- * Do not modify outside approved batch tasks.
- * Source: POLICY-GATED-CPP-HANDOFF.md
- * Date: 8 January 2026
--->
+<!-- header.html -->
 <header class="site-header">
     <div class="header-inner">
         <div class="header-left">
-            <a href="/" class="header-logo-link" aria-label="Cape Plaster &amp; Pools home">
-                <img src="./assets/cpp-logo.svg" alt="Cape Plaster &amp; Pools logo" class="header-logo" />
+            <a href="#" class="header-logo-link">
+                <img src="./assets/logo.svg" alt="Cape Plaster & Pools" class="header-logo" />
             </a>
         </div>
 
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-            <div class="nav-toggle-bars">
-                <span class="nav-toggle-bar"></span>
-                <span class="nav-toggle-bar"></span>
-                <span class="nav-toggle-bar"></span>
-            </div>
-        </button>
-
-        <nav class="nav" aria-label="Main navigation">
-            <a href="/" class="nav-link nav-link-active">Home</a>
-
-            <div class="nav-dropdown" data-dropdown="services">
-                <button class="nav-dropdown-toggle" type="button">
-                    Services
-                    <span aria-hidden="true">▼</span>
-                </button>
-                <div class="nav-dropdown-menu">
-                    <a href="#services" class="nav-dropdown-item">Pool Services</a>
-                    <a href="#services" class="nav-dropdown-item">Plastering &amp; Finishes</a>
-                    <a href="#services" class="nav-dropdown-item">Stonework &amp; Paving</a>
-                    <a href="#services" class="nav-dropdown-item">Waterproofing &amp; Repairs</a>
-                    <a href="#services" class="nav-dropdown-item">Home Maintenance &amp; Fix Supply</a>
-                    <a href="#services" class="nav-dropdown-item">Landscaping &amp; Gardening</a>
-                </div>
-            </div>
-
-            <div class="nav-dropdown" data-dropdown="areas">
-                <button class="nav-dropdown-toggle" type="button">
+        <nav class="nav">
+            <a href="#services" class="nav-link">Services</a>
+            
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-toggle" aria-expanded="false">
                     Areas
-                    <span aria-hidden="true">▼</span>
                 </button>
                 <div class="nav-dropdown-menu">
-                    <a href="#areas" class="nav-dropdown-item">Southern Suburbs</a>
-                    <a href="#areas" class="nav-dropdown-item">Deep South</a>
-                    <a href="#areas" class="nav-dropdown-item">Atlantic Seaboard</a>
-                    <a href="#areas" class="nav-dropdown-item">Heritage Belt</a>
+                    <a href="#" class="nav-dropdown-item">Deep South</a>
+                    <a href="#" class="nav-dropdown-item">Southern Suburbs</a>
+                    <a href="#" class="nav-dropdown-item">Atlantic Seaboard</a>
+                    <a href="#" class="nav-dropdown-item">Heritage Belt</a>
                 </div>
             </div>
 
+            <a href="#portfolio" class="nav-link">Portfolio</a>
             <a href="#about" class="nav-link">About</a>
             <a href="#contact" class="nav-link">Contact</a>
         </nav>
 
         <div class="header-cta">
             <a href="https://wa.me/27766125035?text=Hi%2C%20I%27d%20like%20a%20quote" class="button cta-primary" target="_blank" rel="noopener">
-                <span class="button-text">Get a quote</span>
+                <span class="button-text">WhatsApp a quote</span>
             </a>
         </div>
+
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span class="nav-toggle-bars">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </span>
+        </button>
     </div>
+    
+    <!-- Animated glow stripe UNDER header content -->
+    <div class="header-glow-stripe"></div>
 </header>
-<script src="./partials/navigation.js" defer></script>
+
+<script>
+// Dropdown toggle
+const dropdowns = document.querySelectorAll('.nav-dropdown');
+dropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+    toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = dropdown.classList.contains('open');
+        
+        // Close all dropdowns
+        dropdowns.forEach(d => d.classList.remove('open'));
+        
+        // Toggle current
+        if (!isOpen) {
+            dropdown.classList.add('open');
+            toggle.setAttribute('aria-expanded', 'true');
+        } else {
+            toggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+});
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', () => {
+    dropdowns.forEach(d => {
+        d.classList.remove('open');
+        d.querySelector('.nav-dropdown-toggle').setAttribute('aria-expanded', 'false');
+    });
+});
+
+// Mobile nav toggle
+const navToggle = document.querySelector('.nav-toggle');
+const nav = document.querySelector('.nav');
+
+navToggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+});
+</script>
