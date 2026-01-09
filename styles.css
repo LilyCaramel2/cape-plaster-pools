@@ -5,7 +5,7 @@
  * Do not modify outside approved batch tasks.
  * Source: POLICY-GATED-CPP-HANDOFF.md
  * Date: 9 January 2026
- * UPDATE: Tightened footer spacing (Jan 9, 2026)
+ * UPDATE: Animated glow stripe under header (Jan 9, 2026)
  */
 
 /* Root tokens */
@@ -486,17 +486,17 @@ main {
     text-decoration: none;
 }
 
-/* Header - REDUCED GLOW */
+/* Header - CLEAN WITH ANIMATED GLOW STRIPE */
 .site-header {
     position: fixed;
     inset: 0 0 auto 0;
     height: var(--header-height);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 20;
     background: linear-gradient(to bottom, rgba(0, 17, 45, 0.98), rgba(10, 36, 90, 0.96), rgba(2, 78, 151, 0.92), transparent);
-    border-bottom: 1px solid rgba(17, 182, 240, 0.35);
     backdrop-filter: blur(24px);
 }
 
@@ -508,6 +508,41 @@ main {
     align-items: center;
     justify-content: space-between;
     gap: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Animated glow stripe - UNDER logo and menu */
+.header-glow-stripe {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--lime-green) 20%,
+        var(--bright-blue) 50%,
+        var(--lime-green) 80%,
+        transparent 100%
+    );
+    opacity: 0.6;
+    animation: glowSweep 3s ease-in-out infinite;
+}
+
+@keyframes glowSweep {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0.4;
+    }
 }
 
 .header-left {
@@ -522,17 +557,17 @@ main {
     justify-content: center;
 }
 
-/* Logo - MINIMAL GLOW */
+/* Logo - CLEAN, NO GLOW */
 .header-logo {
     height: 120px;
     width: auto;
-    filter: drop-shadow(0 0 4px rgba(17, 182, 240, 0.3));
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
     transition: filter var(--transition-fast), transform var(--transition-fast);
 }
 
 .header-logo:hover {
     transform: translateY(-2px);
-    filter: drop-shadow(0 0 8px rgba(17, 182, 240, 0.6));
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
 }
 
 /* Nav - VIVID BLUE */
