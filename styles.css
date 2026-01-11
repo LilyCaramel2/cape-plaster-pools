@@ -5,7 +5,7 @@
  * Do not modify outside approved batch tasks.
  * Source: POLICY-GATED-CPP-HANDOFF.md
  * Date: 9 January 2026
- * UPDATE: Image placeholder system (Jan 9, 2026)
+ * UPDATE: Footer tightened (Jan 11, 2026)
  */
 
 /* Root tokens */
@@ -810,7 +810,7 @@ main {
 .site-footer {
     background: radial-gradient(circle at top, #00112d 0%, #000814 60%);
     border-top: 1px solid rgba(249, 249, 249, 0.14);
-    padding: 3rem 1.5rem 0;
+    padding: 2.5rem 1.5rem 0;
     color: var(--text-secondary);
 }
 
@@ -819,66 +819,42 @@ main {
     margin: 0 auto;
 }
 
-/* 5-column grid: Contact Hub (1.5fr) + 4 area columns (1fr each) */
+/* TIGHTER GRID: Contact Hub 1.2fr instead of 1.5fr */
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
-    gap: 2.2rem;
-    margin-bottom: 2rem;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr;
+    gap: 1.8rem;
+    margin-bottom: 1.5rem;
 }
 
 .footer-brand {
     display: flex;
     flex-direction: column;
-    gap: 0.7rem;
+    gap: 0.5rem;
 }
 
-/* Footer logo - MINIMAL GLOW */
+/* Footer logo - SMALLER */
 .footer-logo {
-    height: 75px;
+    height: 65px;
     width: auto;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.3rem;
     filter: drop-shadow(0 0 3px rgba(17, 182, 240, 0.2));
 }
 
-/* Brand lockup (text-only fallback) */
-.footer-brand-lockup {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-    margin-bottom: 0.3rem;
-}
-
-.footer-brand-name {
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: var(--text-primary);
-    margin: 0;
-    line-height: 1.2;
-}
-
-.footer-brand-tagline {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    color: var(--text-dim);
-    margin: 0;
-    line-height: 1.3;
-}
-
 .footer-byline {
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     color: var(--text-dim);
     line-height: 1.5;
+    margin-bottom: 0.4rem;
 }
 
 .footer-contact {
-    font-size: 0.88rem;
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
 }
 
 .footer-contact p {
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.25rem;
 }
 
 .footer-contact a {
@@ -889,7 +865,7 @@ main {
 .footer-social-row {
     display: flex;
     gap: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
 /* LIME GREEN GLOW on social icons - SUBTLE */
@@ -915,14 +891,14 @@ main {
     box-shadow: 0 0 12px rgba(127, 255, 0, 0.3);
 }
 
-/* WhatsApp button - VIVID BLUE */
+/* WhatsApp button - COMPACT */
 .footer-whatsapp-cta {
-    margin-top: 0.3rem;
+    margin-top: 0.2rem;
 }
 
 .footer-whatsapp-cta .button {
-    padding: 0.5rem 1.1rem;
-    font-size: 0.84rem;
+    padding: 0.45rem 1rem;
+    font-size: 0.82rem;
     background: linear-gradient(135deg, #11b6f0, #024e97);
     color: var(--text-primary);
     box-shadow: 0 6px 18px rgba(17, 182, 240, 0.45);
@@ -946,12 +922,12 @@ main {
 }
 
 .footer-column-heading {
-    font-size: 0.92rem;
+    font-size: 0.88rem;
     font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: var(--text-dim);
-    margin-bottom: 0.65rem;
+    margin-bottom: 0.6rem;
 }
 
 .footer-link-list {
@@ -961,11 +937,11 @@ main {
 }
 
 .footer-link-list li + li {
-    margin-top: 0.25rem;
+    margin-top: 0.2rem;
 }
 
 .footer-link {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     color: var(--text-secondary);
     text-decoration: none;
     position: relative;
@@ -992,13 +968,13 @@ main {
     height: 2px;
     background: var(--lime-green);
     width: 100%;
-    margin: 0;
+    margin: 0 0 1rem;
 }
 
-/* Bottom row - TIGHTENED */
+/* Bottom row - COMPACT */
 .footer-bottom {
     background: var(--dark-blue);
-    padding: 0.9rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     margin: 0 -1.5rem;
 }
 
@@ -1010,7 +986,7 @@ main {
     gap: 0.8rem;
     align-items: center;
     justify-content: space-between;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     color: var(--text-dim);
 }
 
@@ -1053,7 +1029,7 @@ main {
 }
 
 .footer-caramel-text {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     color: var(--text-dim);
 }
 
@@ -1158,11 +1134,11 @@ main {
     /* Mobile footer: single column stack */
     .footer-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.8rem;
     }
 
     .footer-logo {
-        height: 60px;
+        height: 55px;
     }
 
     .section-about .about-inner,
@@ -1242,7 +1218,7 @@ main {
     /* Footer: Brand full width, then 2x2 grid */
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
+        gap: 1.8rem;
     }
 
     .footer-brand {
@@ -1250,7 +1226,7 @@ main {
     }
 
     .footer-logo {
-        height: 65px;
+        height: 60px;
     }
 
     .section-areas .areas-grid {
@@ -1262,7 +1238,7 @@ main {
     }
 }
 
-/* Desktop - 5-COLUMN FOOTER LOCKED */
+/* Desktop - 5-COLUMN FOOTER */
 @media (min-width: 1024px) {
     h1 {
         font-size: 3.5rem;
@@ -1272,8 +1248,8 @@ main {
         width: 23%;
     }
 
-    /* Footer: Full 5-column grid on desktop */
+    /* Footer: 5-column grid */
     .footer-grid {
-        grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr !important;
+        grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr !important;
     }
 }
