@@ -1,12 +1,23 @@
 # robots.txt for Cape Plaster & Pools
-# https://capeplasterandpools.co.za
+# Generated: 11 January 2026
 
 User-agent: *
 Allow: /
 
-# Disallow admin/backend paths (if any exist in future)
+# Sitemap location
+Sitemap: https://www.capeplasterandpools.co.za/sitemap.xml
+
+# Disallow crawling of admin/backend files (if any added later)
 Disallow: /admin/
 Disallow: /private/
+Disallow: /*.json$
 
-# Sitemaps
-Sitemap: https://capeplasterandpools.co.za/sitemap.xml
+# Allow all images and assets
+Allow: /assets/
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.css$
+Allow: /*.js$
